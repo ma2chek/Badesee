@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.example.de.metamob.badesee&apos; to &apos;de.metamob.badesee&apos;&#x0A;- Original project: &apos;de.metamob.Badesee&apos;&#x0A;- Original element: &apos;de.metamob.Badesee/src/com.example.de.metamob.badesee&apos;&#x0A;- Renamed element: &apos;de.metamob.Badesee/src/de.metamob.badesee&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings&#x0A;- Rename subpackages of the package" description="Rename package &apos;com.example.de.metamob.badesee&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.example.de.metamob.badesee" name="de.metamob.badesee" qualified="false" references="true" stamp="1400704242144" textual="false" version="1.0"/>
+</session>
