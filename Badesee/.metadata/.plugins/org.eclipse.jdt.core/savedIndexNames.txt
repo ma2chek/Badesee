@@ -1,3 +1,0 @@
-INDEX VERSION 1.126+/Volumes/OSX DATA/Synced/tfh/MobileApp/Workspace/Badesee/.metadata/.plugins/org.eclipse.jdt.core
-2690709980.index
-2332603086.index
