@@ -33,17 +33,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int gelb=0x7f020000;
+        public static final int gruen=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int rot=0x7f020003;
     }
     public static final class id {
-        public static final int action_settings=0x7f090003;
+        public static final int action_settings=0x7f090005;
         public static final int container=0x7f090000;
+        public static final int icon=0x7f090003;
+        public static final int label=0x7f090004;
         public static final int listView1=0x7f090001;
         public static final int listView2=0x7f090002;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int fragment_main=0x7f030001;
+        public static final int zeilenlayout=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f080000;

@@ -1,0 +1,11 @@
+package de.metamob.badesee;
+
+public class Badestelle {
+	private String name;
+	private String profil;
+	private String bezirk;
+	private String datum;
+	private String sichttiefe;
+	private String enterokokken;
+	private String ecoli;
+}
