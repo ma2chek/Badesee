@@ -1,6 +1,9 @@
 package de.metamob.badesee;
 
-public class Badestelle {
+import java.io.Serializable;
+
+public class Badestelle implements Serializable {
+	private String id;
 	private String name;
 	private String profil;
 	private String bezirk;
@@ -10,11 +13,9 @@ public class Badestelle {
 	private String ecoli;
 	private String wasserqualitaet;
 	private String profilurl;
-	
-	public enum EWasserqualitaet { gruen, gelb, rot };
-	
-	
-	
+	private String coordinates;
+	private String badestellenlink;
+
 	/**
 	 * @param name
 	 * @param profil
@@ -26,10 +27,11 @@ public class Badestelle {
 	 * @param wasserqualitaet
 	 * @param profilurl
 	 */
-	public Badestelle(String name, String profil, String bezirk, String datum,
+	public Badestelle(String id, String name, String profil, String bezirk, String datum,
 			String sichttiefe, String enterokokken, String ecoli,
-			EWasserqualitaet wasserqualitaet, String profilurl) {
+			String wasserqualitaet, String profilurl, String coordinates, String badestellenlink) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.profil = profil;
 		this.bezirk = bezirk;
@@ -37,8 +39,11 @@ public class Badestelle {
 		this.sichttiefe = sichttiefe;
 		this.enterokokken = enterokokken;
 		this.ecoli = ecoli;
-		this.wasserqualitaet = wasserqualitaet.toString();
+		this.wasserqualitaet = wasserqualitaet.substring(0,wasserqualitaet.length()-4);
+		this.wasserqualitaet = this.wasserqualitaet.equals("gruen_a") ? "gruen" : this.wasserqualitaet;		
 		this.profilurl = profilurl;
+		this.coordinates = coordinates;
+		this.badestellenlink = badestellenlink;
 	}
 
 	public String getProfilurl() {
@@ -50,13 +55,15 @@ public class Badestelle {
 	}
 
 	public String getWasserqualitaet() {
+		System.out.println("out");
+		System.out.println(wasserqualitaet);
 		return wasserqualitaet;
 	}
 
-	public void setWasserqualitaet(EWasserqualitaet wasserqualitaet) {
-		this.wasserqualitaet = wasserqualitaet.toString();
+	public void setWasserqualitaet(String wasserqualitaet) {
+		this.wasserqualitaet = wasserqualitaet.substring(0,wasserqualitaet.length()-4);
 	}
-
+	
 	public String getName() {
 		return name;
 	}
@@ -98,5 +105,29 @@ public class Badestelle {
 	}
 	public void setEcoli(String ecoli) {
 		this.ecoli = ecoli;
+	}
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getCoordinates() {
+		return coordinates;
+	}
+
+	public void setCoordinates(String coordinates) {
+		this.coordinates = coordinates;
+	}
+
+	public String getBadestellenlink() {
+		return badestellenlink;
+	}
+
+	public void setBadestellenlink(String badestellenlink) {
+		this.badestellenlink = badestellenlink;
 	}
 }

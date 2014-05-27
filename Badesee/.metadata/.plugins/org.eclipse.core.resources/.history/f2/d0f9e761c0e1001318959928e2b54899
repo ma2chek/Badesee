@@ -1,7 +1,0 @@
-package de.metamob.badesee;
-
-import android.widget.ArrayAdapter;
-
-public class BadestellenAdapter extends ArrayAdapter<Badestelle> {
-
-}
