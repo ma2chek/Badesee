@@ -28,6 +28,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class color {
         public static final int black_overlay=0x7f050000;
+        public static final int default_color=0x7f050002;
+        public static final int selected_color=0x7f050001;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -82,7 +84,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_detail=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int fragment_main=0x7f030002;
-        public static final int zeilenlayout=0x7f030003;
+        public static final int listview=0x7f030003;
+        public static final int zeilenlayout=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f090000;
