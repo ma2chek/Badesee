@@ -17,14 +17,22 @@ public final class R {
         public static final int slide_right=0x7f040005;
     }
     public static final class attr {
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int customFont=0x7f010000;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int metaButtonBarButtonStyle=0x7f010001;
+        public static final int metaButtonBarButtonStyle=0x7f010002;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int metaButtonBarStyle=0x7f010000;
+        public static final int metaButtonBarStyle=0x7f010001;
     }
     public static final class color {
         public static final int black_overlay=0x7f050000;
@@ -43,42 +51,48 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int gelb=0x7f020000;
-        public static final int gruen=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int rot=0x7f020003;
+        public static final int arrowleft=0x7f020000;
+        public static final int coli=0x7f020001;
+        public static final int ente=0x7f020002;
+        public static final int gelb=0x7f020003;
+        public static final int gruen=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int rot=0x7f020006;
+        public static final int sicht=0x7f020007;
+        public static final int wasserquali=0x7f020008;
     }
     public static final class id {
-        public static final int ImageView_ecoli=0x7f0a000e;
-        public static final int ImageView_sichttiefe=0x7f0a0016;
-        public static final int ImageView_wasserqualitaet2=0x7f0a0014;
-        public static final int ImageView_wasserqualitaetLabel=0x7f0a0012;
-        public static final int TextView_badestelle=0x7f0a0002;
-        public static final int TextView_bezirk=0x7f0a0007;
-        public static final int TextView_bezirkLabel=0x7f0a0006;
-        public static final int TextView_datum=0x7f0a0008;
-        public static final int TextView_ecoli=0x7f0a0010;
-        public static final int TextView_ecoliLabel=0x7f0a000f;
-        public static final int TextView_enterokokken=0x7f0a000c;
-        public static final int TextView_enterokokkenLabel=0x7f0a000b;
-        public static final int TextView_profil=0x7f0a0003;
-        public static final int TextView_sichttiefe=0x7f0a0018;
-        public static final int TextView_sichttiefeLabel=0x7f0a0017;
-        public static final int TextView_wasserqualitaetLabel=0x7f0a0013;
-        public static final int action_settings=0x7f0a001d;
-        public static final int container=0x7f0a0019;
-        public static final int icon=0x7f0a001b;
-        public static final int imageView_enterokokken=0x7f0a000a;
-        public static final int imageView_wasserqualitaet1=0x7f0a0004;
-        public static final int label=0x7f0a001c;
+        public static final int ImageView_ecoli=0x7f0a000f;
+        public static final int ImageView_sichttiefe=0x7f0a0017;
+        public static final int ImageView_wasserqualitaet2=0x7f0a0015;
+        public static final int ImageView_wasserqualitaetLabel=0x7f0a0013;
+        public static final int TextView_badestelle=0x7f0a0003;
+        public static final int TextView_bezirk=0x7f0a0008;
+        public static final int TextView_bezirkLabel=0x7f0a0007;
+        public static final int TextView_datum=0x7f0a0009;
+        public static final int TextView_ecoli=0x7f0a0011;
+        public static final int TextView_ecoliLabel=0x7f0a0010;
+        public static final int TextView_enterokokken=0x7f0a000d;
+        public static final int TextView_enterokokkenLabel=0x7f0a000c;
+        public static final int TextView_profil=0x7f0a0004;
+        public static final int TextView_sichttiefe=0x7f0a0019;
+        public static final int TextView_sichttiefeLabel=0x7f0a0018;
+        public static final int TextView_wasserqualitaetLabel=0x7f0a0014;
+        public static final int action_settings=0x7f0a001e;
+        public static final int container=0x7f0a001a;
+        public static final int icon=0x7f0a001c;
+        public static final int imageView1=0x7f0a0002;
+        public static final int imageView_enterokokken=0x7f0a000b;
+        public static final int imageView_wasserqualitaet1=0x7f0a0005;
+        public static final int label=0x7f0a001d;
         public static final int listView1=0x7f0a0000;
-        public static final int mainLayout=0x7f0a001a;
+        public static final int mainLayout=0x7f0a001b;
         public static final int tableRow1=0x7f0a0001;
-        public static final int tableRow2=0x7f0a0005;
-        public static final int tableRow3=0x7f0a0009;
-        public static final int tableRow5=0x7f0a000d;
-        public static final int tableRow6=0x7f0a0011;
-        public static final int tableRow7=0x7f0a0015;
+        public static final int tableRow2=0x7f0a0006;
+        public static final int tableRow3=0x7f0a000a;
+        public static final int tableRow5=0x7f0a000e;
+        public static final int tableRow6=0x7f0a0012;
+        public static final int tableRow7=0x7f0a0016;
     }
     public static final class layout {
         public static final int activity_detail=0x7f030000;
@@ -144,12 +158,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int FullscreenTheme=0x7f080002;
     }
     public static final class styleable {
-        /** 
-         Declare custom theme attributes that allow changing which styles are
-         used for button bars depending on the API level.
-         ?android:attr/buttonBarStyle is new as of API 11 so this is
-         necessary to support previous API levels.
-    
+        /** Attributes that can be used with a ButtonBarContainerTheme.
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
@@ -162,7 +171,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #ButtonBarContainerTheme_metaButtonBarStyle
          */
         public static final int[] ButtonBarContainerTheme = {
-            0x7f010000, 0x7f010001
+            0x7f010001, 0x7f010002
         };
         /**
           <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#metaButtonBarButtonStyle}
@@ -184,5 +193,37 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name de.metamob.badesee:metaButtonBarStyle
         */
         public static final int ButtonBarContainerTheme_metaButtonBarStyle = 0;
+        /** 
+         Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels.
+    
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #TextViewPlus_customFont de.metamob.badesee:customFont}</code></td><td></td></tr>
+           </table>
+           @see #TextViewPlus_customFont
+         */
+        public static final int[] TextViewPlus = {
+            0x7f010000
+        };
+        /**
+          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#customFont}
+          attribute's value can be found in the {@link #TextViewPlus} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name de.metamob.badesee:customFont
+        */
+        public static final int TextViewPlus_customFont = 0;
     };
 }

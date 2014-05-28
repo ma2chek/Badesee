@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+/Volumes/Daten/Daten/Privates/Studium/Master/Semester III/EMA/Adroid/workspace/.metadata/.plugins/org.eclipse.jdt.core
+902008334.index
+2332603086.index
+3122925506.index
