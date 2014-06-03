@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.metamob.badesee"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
     
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -25,7 +25,7 @@
         android:theme="@style/AppTheme" >
         
         
-        <activity
+        <activity android:theme="@style/NoActionBar"
             android:name="de.metamob.badesee.MainActivity"
             android:label="@string/title_activity_main"
             android:launchMode="standard" >
@@ -35,9 +35,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
+        <activity android:theme="@style/NoActionBar"
             android:name="de.metamob.badesee.DetailActivity"
-            android:label="@string/title_activity_detail" >
+            android:label="@string/title_activity_detail">
         </activity>
         
          <meta-data

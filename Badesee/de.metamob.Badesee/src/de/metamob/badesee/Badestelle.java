@@ -2,6 +2,9 @@ package de.metamob.badesee;
 
 import java.io.Serializable;
 
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+
 public class Badestelle implements Serializable {
 	private String id;
 	private String name;
@@ -115,8 +118,9 @@ public class Badestelle implements Serializable {
 		this.id = id;
 	}
 
-	public String getCoordinates() {
-		return coordinates;
+	public LatLng getCoordinates() {
+		String [] coordinatesLngLat = coordinates.split(",");
+		return new LatLng(Double.parseDouble(coordinatesLngLat[1]), Double.parseDouble(coordinatesLngLat[0]));
 	}
 
 	public void setCoordinates(String coordinates) {
@@ -129,5 +133,9 @@ public class Badestelle implements Serializable {
 
 	public void setBadestellenlink(String badestellenlink) {
 		this.badestellenlink = badestellenlink;
+	}
+	
+	public float getMarker(){		
+		return (this.wasserqualitaet.equals("gruen")?BitmapDescriptorFactory.HUE_GREEN: (this.wasserqualitaet.equals("gelb")?BitmapDescriptorFactory.HUE_YELLOW: BitmapDescriptorFactory.HUE_RED));
 	}
 }

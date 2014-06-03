@@ -1,5 +1,11 @@
 package de.metamob.badesee;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,8 +26,11 @@ public class DetailActivity extends Activity {
 	Badestelle aktuelleBadestelle;
 	Intent mainIntent; 
 	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
+		
 		mainIntent = new Intent(this, MainActivity.class);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detail);
@@ -51,6 +60,9 @@ public class DetailActivity extends Activity {
 		Bundle extras = getIntent().getExtras();
 		
 		while (aktuelleBadestelle == null){
+			GoogleMap map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
+			        .getMap();
+			
 			super.onStart();
 			aktuelleBadestelle = (Badestelle)extras.getSerializable("badestelle");
 			
@@ -77,6 +89,12 @@ public class DetailActivity extends Activity {
 			int id = this.getResources().getIdentifier(aktuelleBadestelle.getWasserqualitaet(), "drawable", "de.metamob.badesee");
 			wasserqualitaet1.setImageResource(id);   
 			wasserqualitaet2.setImageResource(id);   
+			
+			map.animateCamera(CameraUpdateFactory.newLatLngZoom(aktuelleBadestelle.getCoordinates(), 15), 2000, null); 
+			map.addMarker(new MarkerOptions()
+	          .position( aktuelleBadestelle.getCoordinates())
+	          .title(aktuelleBadestelle.getName())
+	          .icon(BitmapDescriptorFactory.defaultMarker(aktuelleBadestelle.getMarker())));
 		}		
 	}
 }

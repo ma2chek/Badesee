@@ -11,4 +11,11 @@
 <fullyQualifiedTypeName name="de.metamob.badesee.OnSwipeTouchListener"/>
 <fullyQualifiedTypeName name="android.view.View.OnTouchListener"/>
 <fullyQualifiedTypeName name="de.metamob.badesee.R.id"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.google.android.gms.maps.GoogleMap.OnMarkerClickListener"/>
+<fullyQualifiedTypeName name="de.metamob.badesee.BadestellenAdapter"/>
+<fullyQualifiedTypeName name="de.metamob.badesee.R.color"/>
+<fullyQualifiedTypeName name="de.metamob.badesee.R.layout"/>
+<fullyQualifiedTypeName name="android.graphics.Color"/>
+<fullyQualifiedTypeName name="com.google.android.gms.maps.GoogleMap"/>
 </qualifiedTypeNameHistroy>

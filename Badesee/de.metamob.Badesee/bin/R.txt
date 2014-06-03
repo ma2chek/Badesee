@@ -167,7 +167,8 @@ int layout activity_detail 0x7f030000
 int layout activity_main 0x7f030001
 int layout fragment_main 0x7f030002
 int layout listview 0x7f030003
-int layout zeilenlayout 0x7f030004
+int layout menu_item_background_selector 0x7f030004
+int layout zeilenlayout 0x7f030005
 int menu main 0x7f0b0000
 int string action_settings 0x7f050025
 int string app_name 0x7f050020
@@ -223,9 +224,10 @@ int string wasserqualitaet_label 0x7f050030
 int style AppBaseTheme 0x7f090004
 int style AppTheme 0x7f090005
 int style ButtonBar 0x7f090007
-int style ButtonBarButton 0x7f090008
-int style FullscreenActionBarStyle 0x7f090009
+int style ButtonBarButton 0x7f090009
+int style FullscreenActionBarStyle 0x7f09000a
 int style FullscreenTheme 0x7f090006
+int style NoActionBar 0x7f090008
 int style WalletFragmentDefaultButtonTextAppearance 0x7f090002
 int style WalletFragmentDefaultDetailsHeaderTextAppearance 0x7f090001
 int style WalletFragmentDefaultDetailsTextAppearance 0x7f090000

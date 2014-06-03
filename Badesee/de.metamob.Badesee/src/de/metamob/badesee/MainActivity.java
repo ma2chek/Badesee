@@ -1,5 +1,6 @@
 package de.metamob.badesee;
 
+import java.io.Console;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -9,13 +10,20 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.LayoutInflater;
@@ -42,10 +50,14 @@ import android.os.Build;
 public class MainActivity extends Activity {
 
 	final List <Badestelle> badestellen = new ArrayList<Badestelle>();
-	private GoogleMap googleMap;
+	private GoogleMap map;
+	private int actualPosition = -1;
+	ListView l;
+	
 	
 	Intent detailIntent; // = new Intent(this, DetailActivity.class);
 	ListView mainLayout;
+	List <Marker> markers = new ArrayList<Marker>();
 	Badestelle bs;
 	
 	@Override
@@ -60,6 +72,9 @@ public class MainActivity extends Activity {
 		          overridePendingTransition (R.anim.open_next, R.anim.close_main);
 		    }
 		});
+		if (actualPosition >= 0){
+			map.moveCamera(CameraUpdateFactory.newLatLngZoom(badestellen.get(actualPosition).getCoordinates(), 15));
+		}
 	}
 	
 	@Override
@@ -74,19 +89,29 @@ public class MainActivity extends Activity {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
-		initilizeMap();
-		parseJSON();
+		//test
 		
-		final ListView l = (ListView) findViewById(R.id.listView1);
+		parseJSON();
+		initilizeMap();
+		
+		l  = (ListView) findViewById(R.id.listView1);
 		ArrayAdapter<Badestelle> badestellenAdapter = new BadestellenAdapter(this, android.R.layout.simple_list_item_1, badestellen);
 		l.setAdapter(badestellenAdapter);
 		l.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 	        public void onItemClick(AdapterView<?> parent, View view,
 	                final int position, long id) {
-
-	          bs = badestellen.get(position);
-	          view.setSelected(true);
+			  actualPosition = position;
+	          bs = badestellen.get(actualPosition);
+	         
+	          ((BadestellenAdapter) l.getAdapter()).setItemSelected( actualPosition);	         
+			  //view.setSelected(true);
+	          
+	          //l.setSelection(position);
+	         // l.smoothScrollToPosition(markers.indexOf(position));
+	          l.invalidateViews();
+	          
+	          map.animateCamera(CameraUpdateFactory.newLatLngZoom(bs.getCoordinates(), 15), 2000, null); 
 	          System.out.println("select "+ bs.getName()+" // "+bs.getWasserqualitaet()) ;
 	        }
 	    });
@@ -96,8 +121,12 @@ public class MainActivity extends Activity {
 			@Override
 	        public boolean onItemLongClick(AdapterView<?> parent, View view,
 	                final int position, long id) {
-
+				actualPosition = position;
 	          bs = badestellen.get(position);
+	          
+	          ((BadestellenAdapter) l.getAdapter()).setItemSelected( actualPosition );
+			 // l.setSelection( markers.indexOf(position) );
+			 // l.smoothScrollToPositionFromTop(markers.indexOf(position),25,1000);
 	          System.out.println("LOOOONG select "+ bs.getName()+" // "+bs.getWasserqualitaet()) ;
 	          detailIntent.putExtra("badestelle", bs);
 	          startActivity(detailIntent);
@@ -147,7 +176,7 @@ public class MainActivity extends Activity {
 	
 	public void parseJSON(){		
 		try {
-			JSONObject jObject = new JSONObject(readJSON("Badewasser_latin9.json"));
+			JSONObject jObject = new JSONObject(readJSON("Badewasser.json"));
 			JSONArray jsonArray = jObject.getJSONArray("index");
 			for (int i = 0; i < jsonArray.length(); i++) {			
 		        JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -165,6 +194,7 @@ public class MainActivity extends Activity {
 		        		 	jsonObject.getString("badestellelink"))
 		        );
 		     }
+		//	 map.animateCamera(CameraUpdateFactory.newLatLngZoom(badestellen.get(0).getCoordinates(), 15), 2000, null);
 		} catch (JSONException e) {
 			System.out.println("murks");
             e.printStackTrace();
@@ -189,16 +219,43 @@ public class MainActivity extends Activity {
 	}
 	
 	private void initilizeMap() {
-        if (googleMap == null) {
-            googleMap = ((MapFragment) getFragmentManager().findFragmentById(
-                    R.id.map)).getMap();
- 
-            // check if map is created successfully or not
-            if (googleMap == null) {
-                Toast.makeText(getApplicationContext(),
-                        "Sorry! unable to create maps", Toast.LENGTH_SHORT)
-                        .show();
-            }
-        }
+		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
+		        .getMap();
+		map.setOnMarkerClickListener(new OnMarkerClickListener() {
+			
+			@Override
+			public boolean onMarkerClick(Marker marker) {
+				// TODO Auto-generated method stub
+				l.invalidateViews();
+				actualPosition =  markers.indexOf(marker);
+				
+				((BadestellenAdapter) l.getAdapter()).setItemSelected(actualPosition);
+				
+							
+				//l.setSelection( markers.indexOf(marker) );
+				l.smoothScrollToPosition(actualPosition);
+				//l.smoothScrollToPositionFromTop(markers.indexOf(marker),25,1000);
+				return false;
+			}
+		});
+			
+			
+        if (map != null) {
+        	System.out.println("HIER");
+        	
+        	int counter = 0;
+        	for (Badestelle thisBadestelle : badestellen){
+        		
+        		//String wq = thisBadestelle.getWasserqualitaet();
+        		//float markerColor = (wq.equals("gruen")?BitmapDescriptorFactory.HUE_GREEN: (wq.equals("gelb")?BitmapDescriptorFactory.HUE_YELLOW: BitmapDescriptorFactory.HUE_RED));
+
+        		markers.add(map.addMarker(new MarkerOptions()
+  	          .position( thisBadestelle.getCoordinates())
+  	          .title(thisBadestelle.getName())
+  	          .icon(BitmapDescriptorFactory.defaultMarker(thisBadestelle.getMarker()))));
+        		
+        	}
+        }        
     }
+    
 }

@@ -503,7 +503,8 @@ containing a value of this type.
         public static final int activity_main=0x7f030001;
         public static final int fragment_main=0x7f030002;
         public static final int listview=0x7f030003;
-        public static final int zeilenlayout=0x7f030004;
+        public static final int menu_item_background_selector=0x7f030004;
+        public static final int zeilenlayout=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
@@ -656,9 +657,10 @@ containing a value of this type.
          */
         public static final int AppTheme=0x7f090005;
         public static final int ButtonBar=0x7f090007;
-        public static final int ButtonBarButton=0x7f090008;
-        public static final int FullscreenActionBarStyle=0x7f090009;
+        public static final int ButtonBarButton=0x7f090009;
+        public static final int FullscreenActionBarStyle=0x7f09000a;
         public static final int FullscreenTheme=0x7f090006;
+        public static final int NoActionBar=0x7f090008;
         public static final int WalletFragmentDefaultButtonTextAppearance=0x7f090002;
         public static final int WalletFragmentDefaultDetailsHeaderTextAppearance=0x7f090001;
         public static final int WalletFragmentDefaultDetailsTextAppearance=0x7f090000;
