@@ -9,6 +9,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
@@ -33,11 +36,14 @@ import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.os.Build;
 
 public class MainActivity extends Activity {
 
 	final List <Badestelle> badestellen = new ArrayList<Badestelle>();
+	private GoogleMap googleMap;
+	
 	Intent detailIntent; // = new Intent(this, DetailActivity.class);
 	ListView mainLayout;
 	Badestelle bs;
@@ -68,7 +74,7 @@ public class MainActivity extends Activity {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
-		
+		initilizeMap();
 		parseJSON();
 		
 		final ListView l = (ListView) findViewById(R.id.listView1);
@@ -181,4 +187,18 @@ public class MainActivity extends Activity {
 	    }
 	    return json;
 	}
+	
+	private void initilizeMap() {
+        if (googleMap == null) {
+            googleMap = ((MapFragment) getFragmentManager().findFragmentById(
+                    R.id.map)).getMap();
+ 
+            // check if map is created successfully or not
+            if (googleMap == null) {
+                Toast.makeText(getApplicationContext(),
+                        "Sorry! unable to create maps", Toast.LENGTH_SHORT)
+                        .show();
+            }
+        }
+    }
 }

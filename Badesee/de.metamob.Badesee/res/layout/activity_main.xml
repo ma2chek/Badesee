@@ -15,25 +15,33 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+		
+			<fragment
+			    android:id="@+id/map"
+			    android:name="com.google.android.gms.maps.MapFragment"
+			    android:layout_width="match_parent"
+			    android:layout_height="0dp"
+			    android:layout_weight="1" />
+			
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="vertical" >
 
             <ListView
                 android:id="@+id/listView1"
                 android:layout_width="match_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:choiceMode="singleChoice" >
-				
+
             </ListView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical" >
 
         </LinearLayout>
 
