@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import de.metamob.badesee.*;
 
 public class BadestellenAdapter extends ArrayAdapter<Badestelle> {
 
@@ -41,10 +42,10 @@ public class BadestellenAdapter extends ArrayAdapter<Badestelle> {
 	public View getView(int position, View convertView, ViewGroup parent) {
 	    LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	    View rowView = inflater.inflate(R.layout.zeilenlayout, parent, false);
-	   
+	    ImageView arrow = (ImageView) rowView.findViewById(R.id.arrow);
 
 	    
-	    TextView textView = (TextView) rowView.findViewById(R.id.label);
+	    TextView textView = (TextView) rowView.findViewById(R.id.entry);
 	    Typeface custom_font = Typeface.createFromAsset(context.getAssets(),"fonts/titilliumweb-extralight-webfont.ttf");
 	    textView.setTypeface(custom_font);
 	    textView.setTextSize(20);
@@ -66,11 +67,14 @@ public class BadestellenAdapter extends ArrayAdapter<Badestelle> {
 	    //	rowView.setActivated(true);
 	    //	
 	    	rowView.setBackgroundColor(context.getResources().getColor( R.color.selected_color));
+	    	textView.setTextColor(context.getResources().getColor(R.color.default_color));
 	    	rowView.refreshDrawableState();
-	    	System.out.println("ERKANNT");
+	    	arrow.setVisibility(View.VISIBLE);
 	    }else{
 	    	rowView.setBackgroundColor(context.getResources().getColor(R.color.default_color));
+	    	textView.setTextColor(context.getResources().getColor(R.color.selected_color));
 	    	rowView.refreshDrawableState();
+	    	arrow.setVisibility(View.INVISIBLE);
 	    //	rowView.setSelected(false);
 	    //	rowView.setBackgroundColor(context.getResources().getColor(R.color.default_color));
 	    }

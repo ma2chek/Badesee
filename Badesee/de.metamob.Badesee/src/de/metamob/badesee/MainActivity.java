@@ -1,14 +1,24 @@
 package de.metamob.badesee;
 
+import java.io.BufferedReader;
 import java.io.Console;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -62,24 +72,27 @@ public class MainActivity extends Activity {
 	
 	@Override
 	protected void onStart(){
+		System.out.println("################# DA");
 		super.onStart();
 		mainLayout = (ListView) findViewById(R.id.listView1);
 		mainLayout.setOnTouchListener(new OnSwipeTouchListener(this){
 			public void onSwipeLeft() {
-		        System.out.println("JIPPE");
+				if (actualPosition != -1){
+				System.out.println("JIPPE");
 		        detailIntent.putExtra("badestelle", bs);
-		          startActivity(detailIntent);
-		          overridePendingTransition (R.anim.open_next, R.anim.close_main);
-		    }
+		        startActivity(detailIntent);
+		        overridePendingTransition (R.anim.open_next, R.anim.close_main);
+		     	}
+			}
 		});
 		if (actualPosition >= 0){
-			map.moveCamera(CameraUpdateFactory.newLatLngZoom(badestellen.get(actualPosition).getCoordinates(), 15));
+			map.moveCamera(CameraUpdateFactory.newLatLngZoom(badestellen.get(actualPosition).getCoordinates(), 12));
 		}
 	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		
+		System.out.println("################# HIOER");
 		
 		detailIntent = new Intent(this, DetailActivity.class);
 		super.onCreate(savedInstanceState);
@@ -100,9 +113,16 @@ public class MainActivity extends Activity {
 		l.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 	        public void onItemClick(AdapterView<?> parent, View view,
-	                final int position, long id) {
-			  actualPosition = position;
-	          bs = badestellen.get(actualPosition);
+	            final int position, long id) {
+				if (position == actualPosition){
+					actualPosition = position;
+					detailIntent.putExtra("badestelle", bs);
+			        startActivity(detailIntent);
+			        overridePendingTransition (R.anim.open_next, R.anim.close_main);
+				}
+				
+				actualPosition = position;
+				bs = badestellen.get(actualPosition);
 	         
 	          ((BadestellenAdapter) l.getAdapter()).setItemSelected( actualPosition);	         
 			  //view.setSelected(true);
@@ -177,7 +197,7 @@ public class MainActivity extends Activity {
 	public void parseJSON(){		
 		try {
 			JSONObject jObject = Json.getJson("http://www.metamob.de/ema/Badewasser.json");
-			//JSONObject jObject = new JSONObject(readJSON("Badewasser.json"));
+		//	JSONObject jObject = new JSONObject(readJSON("Badewasser.json"));
 			JSONArray jsonArray = jObject.getJSONArray("index");
 			for (int i = 0; i < jsonArray.length(); i++) {			
 		        JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -195,7 +215,8 @@ public class MainActivity extends Activity {
 		        		 	jsonObject.getString("badestellelink"))
 		        );
 		     }
-		//	 map.animateCamera(CameraUpdateFactory.newLatLngZoom(badestellen.get(0).getCoordinates(), 15), 2000, null);
+			 Collections.sort(badestellen);
+			 
 		} catch (JSONException e) {
 			System.out.println("murks");
             e.printStackTrace();
@@ -206,6 +227,7 @@ public class MainActivity extends Activity {
 		String json = null;
 	    try {
 	        InputStream is = getAssets().open(filename);
+	        //"ISO-8859-1"
 	        int size = is.available();
 	        byte[] buffer = new byte[size];
 	        is.read(buffer);
@@ -222,6 +244,8 @@ public class MainActivity extends Activity {
 	private void initilizeMap() {
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
 		        .getMap();
+		if (map != null){
+		map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(52.5234051f, 13.4113999f), 10), 2000, null);
 		map.setOnMarkerClickListener(new OnMarkerClickListener() {
 			
 			@Override
@@ -258,5 +282,5 @@ public class MainActivity extends Activity {
         	}
         }        
     }
-    
+	}
 }

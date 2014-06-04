@@ -10,8 +10,11 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.HTTP;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import android.os.StrictMode;
 
 public class Json {
 	public static JSONObject getJson(String url){
@@ -21,7 +24,11 @@ public class Json {
 		JSONObject jsonObject = null;
 		
 		// HTTP
-		try {	    	
+		try {	    
+			
+			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		    StrictMode.setThreadPolicy(policy);
+		    
 			HttpClient httpclient = new DefaultHttpClient(); // for port 80 requests!
 			System.out.println("--------------------------:: " + url);
 			HttpGet httppost = new HttpGet(url);
@@ -29,12 +36,13 @@ public class Json {
 			HttpEntity entity = response.getEntity();
 			is = entity.getContent();
 		} catch(Exception e) {
+			System.out.println("############ FEHLER0 "+e);
 			return null;
 		}
 	    
 		// Read response to string
 		try {	    	
-			BufferedReader reader = new BufferedReader(new InputStreamReader(is,"utf-8"),8);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(is, HTTP.ISO_8859_1),8);
 			StringBuilder sb = new StringBuilder();
 			String line = null;
 			while ((line = reader.readLine()) != null) {
@@ -43,6 +51,7 @@ public class Json {
 			is.close();
 			result = sb.toString();	            
 		} catch(Exception e) {
+			System.out.println("############ FEHLER1");
 			return null;
 		}
  
@@ -50,6 +59,7 @@ public class Json {
 		try {
 			jsonObject = new JSONObject(result);            
 		} catch(JSONException e) {
+			System.out.println("############ FEHLER2");
 			return null;
 		}
     

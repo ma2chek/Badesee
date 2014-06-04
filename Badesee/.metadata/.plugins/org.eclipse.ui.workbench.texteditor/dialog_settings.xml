@@ -13,15 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="marker" key="selection"/>
+		<item value="Swip" key="selection"/>
 		<list key="findhistory">
+			<item value="swip"/>
+			<item value="anima"/>
+			<item value="swi"/>
+			<item value="swipe"/>
+			<item value="jsonObject"/>
 			<item value="marker"/>
 			<item value="map"/>
 			<item value="getWasserqualitaet"/>
-			<item value="System"/>
-			<item value="l"/>
-			<item value="context"/>
-			<item value="wasser"/>
 		</list>
 		<list key="replacehistory">
 		</list>
