@@ -29,10 +29,10 @@ public class DetailActivity extends Activity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		
+		super.onCreate(savedInstanceState);
 		
 		mainIntent = new Intent(this, MainActivity.class);
-		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_detail);
 		
 		

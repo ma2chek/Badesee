@@ -72,7 +72,6 @@ public class MainActivity extends Activity {
 	
 	@Override
 	protected void onStart(){
-		System.out.println("################# DA");
 		super.onStart();
 		mainLayout = (ListView) findViewById(R.id.listView1);
 		mainLayout.setOnTouchListener(new OnSwipeTouchListener(this){

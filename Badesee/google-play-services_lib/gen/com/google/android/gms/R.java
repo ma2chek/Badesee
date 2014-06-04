@@ -5,17 +5,9 @@
  * should not be modified by hand.
  */
 
-package de.metamob.badesee;
+package com.google.android.gms;
 
 public final class R {
-    public static final class anim {
-        public static int close_main=0x7f040000;
-        public static int close_next=0x7f040001;
-        public static int open_main=0x7f040002;
-        public static int open_next=0x7f040003;
-        public static int slide_left=0x7f040004;
-        public static int slide_right=0x7f040005;
-    }
     public static final class attr {
         /** 
     The size of the ad. It must be one of BANNER, FULL_BANNER, LEADERBOARD,
@@ -162,14 +154,6 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int cameraZoom=0x7f010008;
-        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int customFont=0x7f010020;
         /**  Google Wallet environment to use 
          <p>Must be one of the following constant values.</p>
 <table>
@@ -265,14 +249,6 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int maskedWalletDetailsTextAppearance=0x7f010019;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-         */
-        public static int metaButtonBarButtonStyle=0x7f010022;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-         */
-        public static int metaButtonBarStyle=0x7f010021;
         /**  Theme to be used for the Wallet selector 
          <p>Must be one of the following constant values.</p>
 <table>
@@ -351,326 +327,209 @@ containing a value of this type.
         public static int zOrderOnTop=0x7f010010;
     }
     public static final class color {
-        public static int black_overlay=0x7f060017;
-        public static int common_action_bar_splitter=0x7f060009;
+        public static int common_action_bar_splitter=0x7f040009;
         /**  Sign-in Button Colors 
          */
-        public static int common_signin_btn_dark_text_default=0x7f060000;
-        public static int common_signin_btn_dark_text_disabled=0x7f060002;
-        public static int common_signin_btn_dark_text_focused=0x7f060003;
-        public static int common_signin_btn_dark_text_pressed=0x7f060001;
-        public static int common_signin_btn_default_background=0x7f060008;
-        public static int common_signin_btn_light_text_default=0x7f060004;
-        public static int common_signin_btn_light_text_disabled=0x7f060006;
-        public static int common_signin_btn_light_text_focused=0x7f060007;
-        public static int common_signin_btn_light_text_pressed=0x7f060005;
-        public static int common_signin_btn_text_dark=0x7f06001a;
-        public static int common_signin_btn_text_light=0x7f06001b;
-        public static int default_color=0x7f060019;
-        public static int selected_color=0x7f060018;
-        public static int wallet_bright_foreground_disabled_holo_light=0x7f06000f;
+        public static int common_signin_btn_dark_text_default=0x7f040000;
+        public static int common_signin_btn_dark_text_disabled=0x7f040002;
+        public static int common_signin_btn_dark_text_focused=0x7f040003;
+        public static int common_signin_btn_dark_text_pressed=0x7f040001;
+        public static int common_signin_btn_default_background=0x7f040008;
+        public static int common_signin_btn_light_text_default=0x7f040004;
+        public static int common_signin_btn_light_text_disabled=0x7f040006;
+        public static int common_signin_btn_light_text_focused=0x7f040007;
+        public static int common_signin_btn_light_text_pressed=0x7f040005;
+        public static int common_signin_btn_text_dark=0x7f040017;
+        public static int common_signin_btn_text_light=0x7f040018;
+        public static int wallet_bright_foreground_disabled_holo_light=0x7f04000f;
         /** 
          Wallet colors to support consistent Wallet fragment holo dark UI in client application
          regardless of the theme and device type
     
          */
-        public static int wallet_bright_foreground_holo_dark=0x7f06000a;
-        public static int wallet_bright_foreground_holo_light=0x7f060010;
-        public static int wallet_dim_foreground_disabled_holo_dark=0x7f06000c;
-        public static int wallet_dim_foreground_holo_dark=0x7f06000b;
-        public static int wallet_dim_foreground_inverse_disabled_holo_dark=0x7f06000e;
-        public static int wallet_dim_foreground_inverse_holo_dark=0x7f06000d;
-        public static int wallet_highlighted_text_holo_dark=0x7f060014;
-        public static int wallet_highlighted_text_holo_light=0x7f060013;
-        public static int wallet_hint_foreground_holo_dark=0x7f060012;
-        public static int wallet_hint_foreground_holo_light=0x7f060011;
-        public static int wallet_holo_blue_light=0x7f060015;
-        public static int wallet_link_text_light=0x7f060016;
-        public static int wallet_primary_text_holo_light=0x7f06001c;
-        public static int wallet_secondary_text_holo_dark=0x7f06001d;
-    }
-    public static final class dimen {
-        /**  Default screen margins, per the Android Design guidelines. 
-
-         Example customization of dimensions originally defined in res/values/dimens.xml
-         (such as screen margins) for screens with more than 820dp of available width. This
-         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
-    
-         */
-        public static int activity_horizontal_margin=0x7f0a0000;
-        public static int activity_vertical_margin=0x7f0a0001;
+        public static int wallet_bright_foreground_holo_dark=0x7f04000a;
+        public static int wallet_bright_foreground_holo_light=0x7f040010;
+        public static int wallet_dim_foreground_disabled_holo_dark=0x7f04000c;
+        public static int wallet_dim_foreground_holo_dark=0x7f04000b;
+        public static int wallet_dim_foreground_inverse_disabled_holo_dark=0x7f04000e;
+        public static int wallet_dim_foreground_inverse_holo_dark=0x7f04000d;
+        public static int wallet_highlighted_text_holo_dark=0x7f040014;
+        public static int wallet_highlighted_text_holo_light=0x7f040013;
+        public static int wallet_hint_foreground_holo_dark=0x7f040012;
+        public static int wallet_hint_foreground_holo_light=0x7f040011;
+        public static int wallet_holo_blue_light=0x7f040015;
+        public static int wallet_link_text_light=0x7f040016;
+        public static int wallet_primary_text_holo_light=0x7f040019;
+        public static int wallet_secondary_text_holo_dark=0x7f04001a;
     }
     public static final class drawable {
-        public static int arrowleft=0x7f020000;
-        public static int arrowtight=0x7f020001;
-        public static int coli=0x7f020002;
-        public static int common_signin_btn_icon_dark=0x7f020003;
-        public static int common_signin_btn_icon_disabled_dark=0x7f020004;
-        public static int common_signin_btn_icon_disabled_focus_dark=0x7f020005;
-        public static int common_signin_btn_icon_disabled_focus_light=0x7f020006;
-        public static int common_signin_btn_icon_disabled_light=0x7f020007;
-        public static int common_signin_btn_icon_focus_dark=0x7f020008;
-        public static int common_signin_btn_icon_focus_light=0x7f020009;
-        public static int common_signin_btn_icon_light=0x7f02000a;
-        public static int common_signin_btn_icon_normal_dark=0x7f02000b;
-        public static int common_signin_btn_icon_normal_light=0x7f02000c;
-        public static int common_signin_btn_icon_pressed_dark=0x7f02000d;
-        public static int common_signin_btn_icon_pressed_light=0x7f02000e;
-        public static int common_signin_btn_text_dark=0x7f02000f;
-        public static int common_signin_btn_text_disabled_dark=0x7f020010;
-        public static int common_signin_btn_text_disabled_focus_dark=0x7f020011;
-        public static int common_signin_btn_text_disabled_focus_light=0x7f020012;
-        public static int common_signin_btn_text_disabled_light=0x7f020013;
-        public static int common_signin_btn_text_focus_dark=0x7f020014;
-        public static int common_signin_btn_text_focus_light=0x7f020015;
-        public static int common_signin_btn_text_light=0x7f020016;
-        public static int common_signin_btn_text_normal_dark=0x7f020017;
-        public static int common_signin_btn_text_normal_light=0x7f020018;
-        public static int common_signin_btn_text_pressed_dark=0x7f020019;
-        public static int common_signin_btn_text_pressed_light=0x7f02001a;
-        public static int ente=0x7f02001b;
-        public static int gelb=0x7f02001c;
-        public static int gruen=0x7f02001d;
-        public static int ic_launcher=0x7f02001e;
-        public static int ic_plusone_medium_off_client=0x7f02001f;
-        public static int ic_plusone_small_off_client=0x7f020020;
-        public static int ic_plusone_standard_off_client=0x7f020021;
-        public static int ic_plusone_tall_off_client=0x7f020022;
-        public static int powered_by_google_dark=0x7f020023;
-        public static int powered_by_google_light=0x7f020024;
-        public static int rot=0x7f020025;
-        public static int sicht=0x7f020026;
-        public static int wasserquali=0x7f020027;
+        public static int common_signin_btn_icon_dark=0x7f020000;
+        public static int common_signin_btn_icon_disabled_dark=0x7f020001;
+        public static int common_signin_btn_icon_disabled_focus_dark=0x7f020002;
+        public static int common_signin_btn_icon_disabled_focus_light=0x7f020003;
+        public static int common_signin_btn_icon_disabled_light=0x7f020004;
+        public static int common_signin_btn_icon_focus_dark=0x7f020005;
+        public static int common_signin_btn_icon_focus_light=0x7f020006;
+        public static int common_signin_btn_icon_light=0x7f020007;
+        public static int common_signin_btn_icon_normal_dark=0x7f020008;
+        public static int common_signin_btn_icon_normal_light=0x7f020009;
+        public static int common_signin_btn_icon_pressed_dark=0x7f02000a;
+        public static int common_signin_btn_icon_pressed_light=0x7f02000b;
+        public static int common_signin_btn_text_dark=0x7f02000c;
+        public static int common_signin_btn_text_disabled_dark=0x7f02000d;
+        public static int common_signin_btn_text_disabled_focus_dark=0x7f02000e;
+        public static int common_signin_btn_text_disabled_focus_light=0x7f02000f;
+        public static int common_signin_btn_text_disabled_light=0x7f020010;
+        public static int common_signin_btn_text_focus_dark=0x7f020011;
+        public static int common_signin_btn_text_focus_light=0x7f020012;
+        public static int common_signin_btn_text_light=0x7f020013;
+        public static int common_signin_btn_text_normal_dark=0x7f020014;
+        public static int common_signin_btn_text_normal_light=0x7f020015;
+        public static int common_signin_btn_text_pressed_dark=0x7f020016;
+        public static int common_signin_btn_text_pressed_light=0x7f020017;
+        public static int ic_plusone_medium_off_client=0x7f020018;
+        public static int ic_plusone_small_off_client=0x7f020019;
+        public static int ic_plusone_standard_off_client=0x7f02001a;
+        public static int ic_plusone_tall_off_client=0x7f02001b;
+        public static int powered_by_google_dark=0x7f02001c;
+        public static int powered_by_google_light=0x7f02001d;
     }
     public static final class id {
-        public static int ImageView_ecoli=0x7f070023;
-        public static int ImageView_sichttiefe=0x7f07002b;
-        public static int ImageView_wasserqualitaet2=0x7f070029;
-        public static int ImageView_wasserqualitaetLabel=0x7f070027;
-        public static int TextView_badestelle=0x7f070017;
-        public static int TextView_bezirk=0x7f07001c;
-        public static int TextView_bezirkLabel=0x7f07001b;
-        public static int TextView_datum=0x7f07001d;
-        public static int TextView_ecoli=0x7f070025;
-        public static int TextView_ecoliLabel=0x7f070024;
-        public static int TextView_enterokokken=0x7f070021;
-        public static int TextView_enterokokkenLabel=0x7f070020;
-        public static int TextView_profil=0x7f070018;
-        public static int TextView_sichttiefe=0x7f07002d;
-        public static int TextView_sichttiefeLabel=0x7f07002c;
-        public static int TextView_wasserqualitaetLabel=0x7f070028;
-        public static int action_settings=0x7f070033;
-        public static int arrow=0x7f070016;
-        public static int book_now=0x7f070010;
-        public static int buyButton=0x7f07000a;
-        public static int buy_now=0x7f07000f;
-        public static int buy_with_google=0x7f07000e;
-        public static int classic=0x7f070011;
-        public static int container=0x7f07002e;
-        public static int entry=0x7f070032;
-        public static int grayscale=0x7f070012;
-        public static int holo_dark=0x7f070005;
-        public static int holo_light=0x7f070006;
-        public static int hybrid=0x7f070004;
-        public static int icon=0x7f070031;
-        public static int imageView_enterokokken=0x7f07001f;
-        public static int imageView_wasserqualitaet1=0x7f070019;
-        public static int listView1=0x7f070030;
-        public static int mainLayout=0x7f07002f;
-        public static int map=0x7f070014;
-        public static int match_parent=0x7f07000c;
-        public static int monochrome=0x7f070013;
-        public static int none=0x7f070000;
-        public static int normal=0x7f070001;
-        public static int production=0x7f070007;
-        public static int sandbox=0x7f070008;
-        public static int satellite=0x7f070002;
-        public static int selectionDetails=0x7f07000b;
-        public static int strict_sandbox=0x7f070009;
-        public static int tableRow1=0x7f070015;
-        public static int tableRow2=0x7f07001a;
-        public static int tableRow3=0x7f07001e;
-        public static int tableRow5=0x7f070022;
-        public static int tableRow6=0x7f070026;
-        public static int tableRow7=0x7f07002a;
-        public static int terrain=0x7f070003;
-        public static int wrap_content=0x7f07000d;
+        public static int book_now=0x7f050010;
+        public static int buyButton=0x7f05000a;
+        public static int buy_now=0x7f05000f;
+        public static int buy_with_google=0x7f05000e;
+        public static int classic=0x7f050011;
+        public static int grayscale=0x7f050012;
+        public static int holo_dark=0x7f050005;
+        public static int holo_light=0x7f050006;
+        public static int hybrid=0x7f050004;
+        public static int match_parent=0x7f05000c;
+        public static int monochrome=0x7f050013;
+        public static int none=0x7f050000;
+        public static int normal=0x7f050001;
+        public static int production=0x7f050007;
+        public static int sandbox=0x7f050008;
+        public static int satellite=0x7f050002;
+        public static int selectionDetails=0x7f05000b;
+        public static int strict_sandbox=0x7f050009;
+        public static int terrain=0x7f050003;
+        public static int wrap_content=0x7f05000d;
     }
     public static final class integer {
-        public static int google_play_services_version=0x7f080000;
-    }
-    public static final class layout {
-        public static int activity_detail=0x7f030000;
-        public static int activity_main=0x7f030001;
-        public static int fragment_main=0x7f030002;
-        public static int listview=0x7f030003;
-        public static int menu_item_background_selector=0x7f030004;
-        public static int zeilenlayout=0x7f030005;
-    }
-    public static final class menu {
-        public static int main=0x7f0b0000;
+        public static int google_play_services_version=0x7f060000;
     }
     public static final class string {
-        public static int action_settings=0x7f050025;
-        public static int app_name=0x7f050020;
-        public static int auth_client_needs_enabling_title=0x7f050001;
-        public static int auth_client_needs_installation_title=0x7f050002;
-        public static int auth_client_needs_update_title=0x7f050003;
-        public static int auth_client_play_services_err_notification_msg=0x7f050004;
-        public static int auth_client_requested_by_msg=0x7f050005;
-        public static int auth_client_using_bad_version_title=0x7f050000;
-        public static int badestelle=0x7f050027;
-        public static int bezirk=0x7f05002a;
-        public static int bezirk_label=0x7f050029;
+        public static int auth_client_needs_enabling_title=0x7f030001;
+        public static int auth_client_needs_installation_title=0x7f030002;
+        public static int auth_client_needs_update_title=0x7f030003;
+        public static int auth_client_play_services_err_notification_msg=0x7f030004;
+        public static int auth_client_requested_by_msg=0x7f030005;
+        public static int auth_client_using_bad_version_title=0x7f030000;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
          */
-        public static int common_google_play_services_enable_button=0x7f050011;
+        public static int common_google_play_services_enable_button=0x7f030011;
         /**  Message in confirmation dialog informing user they need to enable
         Google Play services in application settings [CHAR LIMIT=NONE] 
          */
-        public static int common_google_play_services_enable_text=0x7f050010;
+        public static int common_google_play_services_enable_text=0x7f030010;
         /**  Title of confirmation dialog informing user they need to enable
         Google Play services in application settings [CHAR LIMIT=40] 
          */
-        public static int common_google_play_services_enable_title=0x7f05000f;
+        public static int common_google_play_services_enable_title=0x7f03000f;
         /**   Requested by string saying which app requested the notification. [CHAR LIMIT=42] 
          */
-        public static int common_google_play_services_error_notification_requested_by_msg=0x7f05000a;
+        public static int common_google_play_services_error_notification_requested_by_msg=0x7f03000a;
         /**  Button in confirmation dialog for installing Google Play services [CHAR LIMIT=40] 
          */
-        public static int common_google_play_services_install_button=0x7f05000e;
+        public static int common_google_play_services_install_button=0x7f03000e;
         /**  (For phones) Message in confirmation dialog informing user that
         they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static int common_google_play_services_install_text_phone=0x7f05000c;
+        public static int common_google_play_services_install_text_phone=0x7f03000c;
         /**  (For tablets) Message in confirmation dialog informing user that
         they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static int common_google_play_services_install_text_tablet=0x7f05000d;
+        public static int common_google_play_services_install_text_tablet=0x7f03000d;
         /**  Title of confirmation dialog informing user that they need to install
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
-        public static int common_google_play_services_install_title=0x7f05000b;
+        public static int common_google_play_services_install_title=0x7f03000b;
         /**  Message in confirmation dialog informing the user that they provided an invalid account. [CHAR LIMIT=NONE] 
          */
-        public static int common_google_play_services_invalid_account_text=0x7f050017;
+        public static int common_google_play_services_invalid_account_text=0x7f030017;
         /**  Title of confirmation dialog informing the user that they provided an invalid account. [CHAR LIMIT=40] 
          */
-        public static int common_google_play_services_invalid_account_title=0x7f050016;
+        public static int common_google_play_services_invalid_account_title=0x7f030016;
         /**   Title for notification shown when GooglePlayServices needs to be enabled for an
         application to work. [CHAR LIMIT=70] 
          */
-        public static int common_google_play_services_needs_enabling_title=0x7f050009;
+        public static int common_google_play_services_needs_enabling_title=0x7f030009;
         /**  Message in confirmation dialog informing the user that a network error occurred. [CHAR LIMIT=NONE] 
          */
-        public static int common_google_play_services_network_error_text=0x7f050015;
+        public static int common_google_play_services_network_error_text=0x7f030015;
         /**  Title of confirmation dialog informing the user that a network error occurred. [CHAR LIMIT=40] 
          */
-        public static int common_google_play_services_network_error_title=0x7f050014;
+        public static int common_google_play_services_network_error_title=0x7f030014;
         /**   Title for notification shown when GooglePlayServices needs to be installed
         for an application to work. [CHAR LIMIT=70] 
          */
-        public static int common_google_play_services_notification_needs_installation_title=0x7f050007;
+        public static int common_google_play_services_notification_needs_installation_title=0x7f030007;
         /**   Title for notification shown when GooglePlayServices needs to be updated for an
         application to work. [CHAR LIMIT=70] 
          */
-        public static int common_google_play_services_notification_needs_update_title=0x7f050008;
+        public static int common_google_play_services_notification_needs_update_title=0x7f030008;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=42] 
          */
-        public static int common_google_play_services_notification_ticker=0x7f050006;
+        public static int common_google_play_services_notification_ticker=0x7f030006;
         /**  Message in confirmation dialog informing user there is an unknown issue in Google Play
         services [CHAR LIMIT=NONE] 
          */
-        public static int common_google_play_services_unknown_issue=0x7f050018;
+        public static int common_google_play_services_unknown_issue=0x7f030018;
         /**  Message in confirmation dialog informing user that date on the device is not correct,
     causing certificate checks to fail. [CHAR LIMIT=NONE] 
          */
-        public static int common_google_play_services_unsupported_date_text=0x7f05001b;
+        public static int common_google_play_services_unsupported_date_text=0x7f03001b;
         /**  Message in confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=NONE] 
          */
-        public static int common_google_play_services_unsupported_text=0x7f05001a;
+        public static int common_google_play_services_unsupported_text=0x7f03001a;
         /**  Title of confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=40] 
          */
-        public static int common_google_play_services_unsupported_title=0x7f050019;
+        public static int common_google_play_services_unsupported_title=0x7f030019;
         /**  Button in confirmation dialog for updating Google Play services [CHAR LIMIT=40] 
          */
-        public static int common_google_play_services_update_button=0x7f05001c;
+        public static int common_google_play_services_update_button=0x7f03001c;
         /**  Message in confirmation dialog informing user that they need to update
         Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static int common_google_play_services_update_text=0x7f050013;
+        public static int common_google_play_services_update_text=0x7f030013;
         /**  Title of confirmation dialog informing user that they need to update
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
-        public static int common_google_play_services_update_title=0x7f050012;
+        public static int common_google_play_services_update_title=0x7f030012;
         /**  Sign-in button text [CHAR LIMIT=15] 
          */
-        public static int common_signin_button_text=0x7f05001d;
+        public static int common_signin_button_text=0x7f03001d;
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
-        public static int common_signin_button_text_long=0x7f05001e;
-        public static int datum=0x7f05002b;
-        public static int dummy_button=0x7f050021;
-        public static int dummy_content=0x7f050022;
-        public static int ecoli=0x7f05002f;
-        public static int ecoli_label=0x7f05002e;
-        public static int enterokokken=0x7f05002d;
-        public static int enterokokken_label=0x7f05002c;
-        public static int hello_world=0x7f050024;
-        public static int profil=0x7f050028;
-        public static int sichttiefe=0x7f050032;
-        public static int sichttiefe_label=0x7f050031;
-        public static int title_activity_detail=0x7f050026;
-        public static int title_activity_main=0x7f050023;
+        public static int common_signin_button_text_long=0x7f03001e;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */
-        public static int wallet_buy_button_place_holder=0x7f05001f;
-        public static int wasserqualitaet_label=0x7f050030;
+        public static int wallet_buy_button_place_holder=0x7f03001f;
     }
     public static final class style {
-        /** 
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
-
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
-    
- API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
-         */
-        public static int AppBaseTheme=0x7f090004;
-        /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
-         */
-        public static int AppTheme=0x7f090005;
-        public static int ButtonBar=0x7f090007;
-        public static int ButtonBarButton=0x7f090009;
-        public static int FullscreenActionBarStyle=0x7f09000a;
-        public static int FullscreenTheme=0x7f090006;
-        public static int NoActionBar=0x7f090008;
-        public static int WalletFragmentDefaultButtonTextAppearance=0x7f090002;
-        public static int WalletFragmentDefaultDetailsHeaderTextAppearance=0x7f090001;
-        public static int WalletFragmentDefaultDetailsTextAppearance=0x7f090000;
+        public static int WalletFragmentDefaultButtonTextAppearance=0x7f070002;
+        public static int WalletFragmentDefaultDetailsHeaderTextAppearance=0x7f070001;
+        public static int WalletFragmentDefaultDetailsTextAppearance=0x7f070000;
         /** 
          Default style of the wallet fragment that will be used if not set explicitly
          when fragment is created
     
          */
-        public static int WalletFragmentDefaultStyle=0x7f090003;
+        public static int WalletFragmentDefaultStyle=0x7f070003;
     }
     public static final class styleable {
         /** Attributes that can be used with a AdsAttrs.
@@ -679,11 +538,11 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #AdsAttrs_adSize de.metamob.badesee:adSize}</code></td><td>
+           <tr><td><code>{@link #AdsAttrs_adSize com.google.android.gms:adSize}</code></td><td>
     The size of the ad.</td></tr>
-           <tr><td><code>{@link #AdsAttrs_adSizes de.metamob.badesee:adSizes}</code></td><td>
+           <tr><td><code>{@link #AdsAttrs_adSizes com.google.android.gms:adSizes}</code></td><td>
     A comma-separated list of the supported ad sizes.</td></tr>
-           <tr><td><code>{@link #AdsAttrs_adUnitId de.metamob.badesee:adUnitId}</code></td><td> The ad unit ID.</td></tr>
+           <tr><td><code>{@link #AdsAttrs_adUnitId com.google.android.gms:adUnitId}</code></td><td> The ad unit ID.</td></tr>
            </table>
            @see #AdsAttrs_adSize
            @see #AdsAttrs_adSizes
@@ -709,7 +568,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:adSize
+          @attr name com.google.android.gms:adSize
         */
         public static final int AdsAttrs_adSize = 0;
         /**
@@ -729,7 +588,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:adSizes
+          @attr name com.google.android.gms:adSizes
         */
         public static final int AdsAttrs_adSizes = 1;
         /**
@@ -745,64 +604,29 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:adUnitId
+          @attr name com.google.android.gms:adUnitId
         */
         public static final int AdsAttrs_adUnitId = 2;
-        /** Attributes that can be used with a ButtonBarContainerTheme.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ButtonBarContainerTheme_metaButtonBarButtonStyle de.metamob.badesee:metaButtonBarButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ButtonBarContainerTheme_metaButtonBarStyle de.metamob.badesee:metaButtonBarStyle}</code></td><td></td></tr>
-           </table>
-           @see #ButtonBarContainerTheme_metaButtonBarButtonStyle
-           @see #ButtonBarContainerTheme_metaButtonBarStyle
-         */
-        public static final int[] ButtonBarContainerTheme = {
-            0x7f010021, 0x7f010022
-        };
-        /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#metaButtonBarButtonStyle}
-          attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
-
-
-          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name de.metamob.badesee:metaButtonBarButtonStyle
-        */
-        public static final int ButtonBarContainerTheme_metaButtonBarButtonStyle = 1;
-        /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#metaButtonBarStyle}
-          attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
-
-
-          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name de.metamob.badesee:metaButtonBarStyle
-        */
-        public static final int ButtonBarContainerTheme_metaButtonBarStyle = 0;
         /** Attributes that can be used with a MapAttrs.
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MapAttrs_cameraBearing de.metamob.badesee:cameraBearing}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraTargetLat de.metamob.badesee:cameraTargetLat}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraTargetLng de.metamob.badesee:cameraTargetLng}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraTilt de.metamob.badesee:cameraTilt}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraZoom de.metamob.badesee:cameraZoom}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_mapType de.metamob.badesee:mapType}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiCompass de.metamob.badesee:uiCompass}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiRotateGestures de.metamob.badesee:uiRotateGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiScrollGestures de.metamob.badesee:uiScrollGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiTiltGestures de.metamob.badesee:uiTiltGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiZoomControls de.metamob.badesee:uiZoomControls}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiZoomGestures de.metamob.badesee:uiZoomGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_useViewLifecycle de.metamob.badesee:useViewLifecycle}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_zOrderOnTop de.metamob.badesee:zOrderOnTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraBearing com.google.android.gms:cameraBearing}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTargetLat com.google.android.gms:cameraTargetLat}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTargetLng com.google.android.gms:cameraTargetLng}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTilt com.google.android.gms:cameraTilt}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraZoom com.google.android.gms:cameraZoom}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_mapType com.google.android.gms:mapType}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiCompass com.google.android.gms:uiCompass}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiRotateGestures com.google.android.gms:uiRotateGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiScrollGestures com.google.android.gms:uiScrollGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiTiltGestures com.google.android.gms:uiTiltGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiZoomControls com.google.android.gms:uiZoomControls}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiZoomGestures com.google.android.gms:uiZoomGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_useViewLifecycle com.google.android.gms:useViewLifecycle}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_zOrderOnTop com.google.android.gms:zOrderOnTop}</code></td><td></td></tr>
            </table>
            @see #MapAttrs_cameraBearing
            @see #MapAttrs_cameraTargetLat
@@ -826,7 +650,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f01000f, 0x7f010010
         };
         /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#cameraBearing}
+          <p>This symbol is the offset where the {@link com.google.android.gms.R.attr#cameraBearing}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -836,11 +660,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name de.metamob.badesee:cameraBearing
+          @attr name com.google.android.gms:cameraBearing
         */
         public static final int MapAttrs_cameraBearing = 1;
         /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#cameraTargetLat}
+          <p>This symbol is the offset where the {@link com.google.android.gms.R.attr#cameraTargetLat}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -850,11 +674,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name de.metamob.badesee:cameraTargetLat
+          @attr name com.google.android.gms:cameraTargetLat
         */
         public static final int MapAttrs_cameraTargetLat = 2;
         /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#cameraTargetLng}
+          <p>This symbol is the offset where the {@link com.google.android.gms.R.attr#cameraTargetLng}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -864,11 +688,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name de.metamob.badesee:cameraTargetLng
+          @attr name com.google.android.gms:cameraTargetLng
         */
         public static final int MapAttrs_cameraTargetLng = 3;
         /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#cameraTilt}
+          <p>This symbol is the offset where the {@link com.google.android.gms.R.attr#cameraTilt}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -878,11 +702,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name de.metamob.badesee:cameraTilt
+          @attr name com.google.android.gms:cameraTilt
         */
         public static final int MapAttrs_cameraTilt = 4;
         /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#cameraZoom}
+          <p>This symbol is the offset where the {@link com.google.android.gms.R.attr#cameraZoom}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -892,11 +716,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name de.metamob.badesee:cameraZoom
+          @attr name com.google.android.gms:cameraZoom
         */
         public static final int MapAttrs_cameraZoom = 5;
         /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#mapType}
+          <p>This symbol is the offset where the {@link com.google.android.gms.R.attr#mapType}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -912,11 +736,11 @@ containing a value of this type.
 <tr><td><code>terrain</code></td><td>3</td><td></td></tr>
 <tr><td><code>hybrid</code></td><td>4</td><td></td></tr>
 </table>
-          @attr name de.metamob.badesee:mapType
+          @attr name com.google.android.gms:mapType
         */
         public static final int MapAttrs_mapType = 0;
         /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#uiCompass}
+          <p>This symbol is the offset where the {@link com.google.android.gms.R.attr#uiCompass}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -926,11 +750,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name de.metamob.badesee:uiCompass
+          @attr name com.google.android.gms:uiCompass
         */
         public static final int MapAttrs_uiCompass = 6;
         /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#uiRotateGestures}
+          <p>This symbol is the offset where the {@link com.google.android.gms.R.attr#uiRotateGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -940,11 +764,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name de.metamob.badesee:uiRotateGestures
+          @attr name com.google.android.gms:uiRotateGestures
         */
         public static final int MapAttrs_uiRotateGestures = 7;
         /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#uiScrollGestures}
+          <p>This symbol is the offset where the {@link com.google.android.gms.R.attr#uiScrollGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -954,11 +778,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name de.metamob.badesee:uiScrollGestures
+          @attr name com.google.android.gms:uiScrollGestures
         */
         public static final int MapAttrs_uiScrollGestures = 8;
         /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#uiTiltGestures}
+          <p>This symbol is the offset where the {@link com.google.android.gms.R.attr#uiTiltGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -968,11 +792,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name de.metamob.badesee:uiTiltGestures
+          @attr name com.google.android.gms:uiTiltGestures
         */
         public static final int MapAttrs_uiTiltGestures = 9;
         /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#uiZoomControls}
+          <p>This symbol is the offset where the {@link com.google.android.gms.R.attr#uiZoomControls}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -982,11 +806,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name de.metamob.badesee:uiZoomControls
+          @attr name com.google.android.gms:uiZoomControls
         */
         public static final int MapAttrs_uiZoomControls = 10;
         /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#uiZoomGestures}
+          <p>This symbol is the offset where the {@link com.google.android.gms.R.attr#uiZoomGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -996,11 +820,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name de.metamob.badesee:uiZoomGestures
+          @attr name com.google.android.gms:uiZoomGestures
         */
         public static final int MapAttrs_uiZoomGestures = 11;
         /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#useViewLifecycle}
+          <p>This symbol is the offset where the {@link com.google.android.gms.R.attr#useViewLifecycle}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -1010,11 +834,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name de.metamob.badesee:useViewLifecycle
+          @attr name com.google.android.gms:useViewLifecycle
         */
         public static final int MapAttrs_useViewLifecycle = 12;
         /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#zOrderOnTop}
+          <p>This symbol is the offset where the {@link com.google.android.gms.R.attr#zOrderOnTop}
           attribute's value can be found in the {@link #MapAttrs} array.
 
 
@@ -1024,51 +848,19 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name de.metamob.badesee:zOrderOnTop
+          @attr name com.google.android.gms:zOrderOnTop
         */
         public static final int MapAttrs_zOrderOnTop = 13;
-        /** 
-         Declare custom theme attributes that allow changing which styles are
-         used for button bars depending on the API level.
-         ?android:attr/buttonBarStyle is new as of API 11 so this is
-         necessary to support previous API levels.
-    
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #TextViewPlus_customFont de.metamob.badesee:customFont}</code></td><td></td></tr>
-           </table>
-           @see #TextViewPlus_customFont
-         */
-        public static final int[] TextViewPlus = {
-            0x7f010020
-        };
-        /**
-          <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#customFont}
-          attribute's value can be found in the {@link #TextViewPlus} array.
-
-
-          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name de.metamob.badesee:customFont
-        */
-        public static final int TextViewPlus_customFont = 0;
         /**  Attributes for the WalletFragment &lt;fragment&gt; tag 
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #WalletFragmentOptions_environment de.metamob.badesee:environment}</code></td><td> Google Wallet environment to use </td></tr>
-           <tr><td><code>{@link #WalletFragmentOptions_fragmentMode de.metamob.badesee:fragmentMode}</code></td><td> Fragment mode </td></tr>
-           <tr><td><code>{@link #WalletFragmentOptions_fragmentStyle de.metamob.badesee:fragmentStyle}</code></td><td> A style resource specifing attributes to customize the look and feel of WalletFragment </td></tr>
-           <tr><td><code>{@link #WalletFragmentOptions_theme de.metamob.badesee:theme}</code></td><td> Theme to be used for the Wallet selector </td></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_environment com.google.android.gms:environment}</code></td><td> Google Wallet environment to use </td></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_fragmentMode com.google.android.gms:fragmentMode}</code></td><td> Fragment mode </td></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_fragmentStyle com.google.android.gms:fragmentStyle}</code></td><td> A style resource specifing attributes to customize the look and feel of WalletFragment </td></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_theme com.google.android.gms:theme}</code></td><td> Theme to be used for the Wallet selector </td></tr>
            </table>
            @see #WalletFragmentOptions_environment
            @see #WalletFragmentOptions_fragmentMode
@@ -1095,7 +887,7 @@ containing a value of this type.
 <tr><td><code>strict_sandbox</code></td><td>2</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:environment
+          @attr name com.google.android.gms:environment
         */
         public static final int WalletFragmentOptions_environment = 1;
         /**
@@ -1114,7 +906,7 @@ containing a value of this type.
 <tr><td><code>selectionDetails</code></td><td>2</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:fragmentMode
+          @attr name com.google.android.gms:fragmentMode
         */
         public static final int WalletFragmentOptions_fragmentMode = 3;
         /**
@@ -1126,7 +918,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:fragmentStyle
+          @attr name com.google.android.gms:fragmentStyle
         */
         public static final int WalletFragmentOptions_fragmentStyle = 2;
         /**
@@ -1145,7 +937,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>holo_light</code></td><td>1</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:theme
+          @attr name com.google.android.gms:theme
         */
         public static final int WalletFragmentOptions_theme = 0;
         /**  Attributes that may be specified in a style resource to customize the look and feel of
@@ -1155,17 +947,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_buyButtonAppearance de.metamob.badesee:buyButtonAppearance}</code></td><td> Appearance of the buy button.</td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_buyButtonHeight de.metamob.badesee:buyButtonHeight}</code></td><td> Height of the buy button.</td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_buyButtonText de.metamob.badesee:buyButtonText}</code></td><td> Text on the buy button.</td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_buyButtonWidth de.metamob.badesee:buyButtonWidth}</code></td><td> Width of the buy button.</td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsBackground de.metamob.badesee:maskedWalletDetailsBackground}</code></td><td> Masked wallet details background </td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsButtonBackground de.metamob.badesee:maskedWalletDetailsButtonBackground}</code></td><td> "Change" button background in masked wallet details view </td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance de.metamob.badesee:maskedWalletDetailsButtonTextAppearance}</code></td><td> TextAppearance for the "Change" button in masked wallet details view </td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance de.metamob.badesee:maskedWalletDetailsHeaderTextAppearance}</code></td><td> TextAppearance for headers describing masked wallet details </td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsLogoImageType de.metamob.badesee:maskedWalletDetailsLogoImageType}</code></td><td> Type of the wallet logo image in masked wallet details view </td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsLogoTextColor de.metamob.badesee:maskedWalletDetailsLogoTextColor}</code></td><td> Color of the Google Wallet logo text in masked wallet details view </td></tr>
-           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsTextAppearance de.metamob.badesee:maskedWalletDetailsTextAppearance}</code></td><td> TextAppearance for masked wallet details </td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonAppearance com.google.android.gms:buyButtonAppearance}</code></td><td> Appearance of the buy button.</td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonHeight com.google.android.gms:buyButtonHeight}</code></td><td> Height of the buy button.</td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonText com.google.android.gms:buyButtonText}</code></td><td> Text on the buy button.</td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonWidth com.google.android.gms:buyButtonWidth}</code></td><td> Width of the buy button.</td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsBackground com.google.android.gms:maskedWalletDetailsBackground}</code></td><td> Masked wallet details background </td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsButtonBackground com.google.android.gms:maskedWalletDetailsButtonBackground}</code></td><td> "Change" button background in masked wallet details view </td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance com.google.android.gms:maskedWalletDetailsButtonTextAppearance}</code></td><td> TextAppearance for the "Change" button in masked wallet details view </td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance com.google.android.gms:maskedWalletDetailsHeaderTextAppearance}</code></td><td> TextAppearance for headers describing masked wallet details </td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsLogoImageType com.google.android.gms:maskedWalletDetailsLogoImageType}</code></td><td> Type of the wallet logo image in masked wallet details view </td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsLogoTextColor com.google.android.gms:maskedWalletDetailsLogoTextColor}</code></td><td> Color of the Google Wallet logo text in masked wallet details view </td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsTextAppearance com.google.android.gms:maskedWalletDetailsTextAppearance}</code></td><td> TextAppearance for masked wallet details </td></tr>
            </table>
            @see #WalletFragmentStyle_buyButtonAppearance
            @see #WalletFragmentStyle_buyButtonHeight
@@ -1201,7 +993,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>monochrome</code></td><td>3</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:buyButtonAppearance
+          @attr name com.google.android.gms:buyButtonAppearance
         */
         public static final int WalletFragmentStyle_buyButtonAppearance = 3;
         /**
@@ -1230,7 +1022,7 @@ containing a value of this type.
 <tr><td><code>wrap_content</code></td><td>-2</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:buyButtonHeight
+          @attr name com.google.android.gms:buyButtonHeight
         */
         public static final int WalletFragmentStyle_buyButtonHeight = 0;
         /**
@@ -1250,7 +1042,7 @@ containing a value of this type.
 <tr><td><code>book_now</code></td><td>3</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:buyButtonText
+          @attr name com.google.android.gms:buyButtonText
         */
         public static final int WalletFragmentStyle_buyButtonText = 2;
         /**
@@ -1279,7 +1071,7 @@ containing a value of this type.
 <tr><td><code>wrap_content</code></td><td>-2</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:buyButtonWidth
+          @attr name com.google.android.gms:buyButtonWidth
         */
         public static final int WalletFragmentStyle_buyButtonWidth = 1;
         /**
@@ -1293,7 +1085,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:maskedWalletDetailsBackground
+          @attr name com.google.android.gms:maskedWalletDetailsBackground
         */
         public static final int WalletFragmentStyle_maskedWalletDetailsBackground = 6;
         /**
@@ -1307,7 +1099,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:maskedWalletDetailsButtonBackground
+          @attr name com.google.android.gms:maskedWalletDetailsButtonBackground
         */
         public static final int WalletFragmentStyle_maskedWalletDetailsButtonBackground = 8;
         /**
@@ -1319,7 +1111,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:maskedWalletDetailsButtonTextAppearance
+          @attr name com.google.android.gms:maskedWalletDetailsButtonTextAppearance
         */
         public static final int WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance = 7;
         /**
@@ -1331,7 +1123,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:maskedWalletDetailsHeaderTextAppearance
+          @attr name com.google.android.gms:maskedWalletDetailsHeaderTextAppearance
         */
         public static final int WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance = 5;
         /**
@@ -1350,7 +1142,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>monochrome</code></td><td>2</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:maskedWalletDetailsLogoImageType
+          @attr name com.google.android.gms:maskedWalletDetailsLogoImageType
         */
         public static final int WalletFragmentStyle_maskedWalletDetailsLogoImageType = 10;
         /**
@@ -1367,7 +1159,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:maskedWalletDetailsLogoTextColor
+          @attr name com.google.android.gms:maskedWalletDetailsLogoTextColor
         */
         public static final int WalletFragmentStyle_maskedWalletDetailsLogoTextColor = 9;
         /**
@@ -1379,7 +1171,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name de.metamob.badesee:maskedWalletDetailsTextAppearance
+          @attr name com.google.android.gms:maskedWalletDetailsTextAppearance
         */
         public static final int WalletFragmentStyle_maskedWalletDetailsTextAppearance = 4;
     };
