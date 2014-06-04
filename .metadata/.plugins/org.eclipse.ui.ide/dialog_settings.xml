@@ -13,6 +13,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Volumes/Daten/Daten/Privates/Studium/Master/Semester III/EMA/Adroid/workspace/Badesee/google-play-services_lib"/>
 			<item value="/Volumes/Daten/Daten/Privates/Studium/Master/Semester III/EMA/Adroid/workspace/Badesee/de.metamob.Badesee"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
