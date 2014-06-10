@@ -2643,3 +2643,304 @@ Write access not allowed during rendering (user.timezone)
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2014-06-04 23:07:23.229
 !MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+!SESSION 2014-06-11 00:19:53.366 -----------------------------------------------
+eclipse.buildId=v22.6.2-1085508
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=de_DE
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product -keyring /Users/Hans/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product com.android.ide.eclipse.adt.package.product -keyring /Users/Hans/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-06-11 00:19:57.373
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:19:59.434
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project de.metamob.Badesee
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:19:59.434
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project google-play-services_lib
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:03.149
+!MESSAGE fileChanged: failed to find manifest package for project de.metamob.Badesee
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:03.150
+!MESSAGE fileChanged: failed to find manifest package for project de.metamob.Badesee
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:03.152
+!MESSAGE fileChanged: failed to find manifest package for project google-play-services_lib
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:05.314
+!MESSAGE fileChanged: failed to find manifest package for project de.metamob.Badesee
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:05.315
+!MESSAGE fileChanged: failed to find manifest package for project de.metamob.Badesee
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:09.155
+!MESSAGE File is Out of sync
+!STACK 0
+com.android.io.StreamException: org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/de.metamob.Badesee/AndroidManifest.xml'.
+	at com.android.ide.eclipse.adt.io.IFileWrapper.getContents(IFileWrapper.java:55)
+	at com.android.ide.common.xml.AndroidManifestParser.parse(AndroidManifestParser.java:609)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parseUnchecked(AndroidManifestHelper.java:75)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.build(PreCompilerBuilder.java:467)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/de.metamob.Badesee/AndroidManifest.xml'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:793)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:289)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:278)
+	at com.android.ide.eclipse.adt.io.IFileWrapper.getContents(IFileWrapper.java:49)
+	... 15 more
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:09.742
+!MESSAGE File is Out of sync
+!STACK 0
+com.android.io.StreamException: org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/google-play-services_lib/AndroidManifest.xml'.
+	at com.android.ide.eclipse.adt.io.IFileWrapper.getContents(IFileWrapper.java:55)
+	at com.android.ide.common.xml.AndroidManifestParser.parse(AndroidManifestParser.java:609)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parseUnchecked(AndroidManifestHelper.java:75)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.build(PreCompilerBuilder.java:467)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/google-play-services_lib/AndroidManifest.xml'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:793)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:289)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:278)
+	at com.android.ide.eclipse.adt.io.IFileWrapper.getContents(IFileWrapper.java:49)
+	... 15 more
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:11.030
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:11.034
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:11.040
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:11.043
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:11.045
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:11.051
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:11.053
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:11.058
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:11.060
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:11.065
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:11.071
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:11.073
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:12.990
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:12.993
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:12.996
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:12.998
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.000
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.003
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.005
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.009
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.054
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.057
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.061
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.063
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.839
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.840
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.842
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.844
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.845
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.847
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.848
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.850
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.851
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.853
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.856
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:13.857
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:15.226
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:15.228
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:15.229
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:15.231
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:15.232
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:15.233
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:15.235
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:15.236
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:15.237
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:15.239
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:15.241
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:15.242
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:43.832
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:43.833
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:43.835
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:43.836
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:43.837
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:43.839
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:43.840
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:43.842
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:43.843
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:43.844
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:43.846
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:20:43.847
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:21:32.070
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:21:32.073
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:21:32.076
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:21:32.077
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:21:32.079
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:21:32.081
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:21:32.083
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:21:32.086
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:21:32.087
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:21:32.090
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:21:32.094
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-06-11 00:21:32.095
+!MESSAGE activity_detail.xml: Typeface.createFromAsset() is not supported.
