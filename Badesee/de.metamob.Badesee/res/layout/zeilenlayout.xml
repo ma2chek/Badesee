@@ -48,7 +48,7 @@
             android:layout_height="18dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/arrowtight" />
+            android:src="@drawable/arrowright" />
 
     </RelativeLayout>
 

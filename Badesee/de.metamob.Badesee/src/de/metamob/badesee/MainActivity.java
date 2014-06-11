@@ -161,7 +161,9 @@ public class MainActivity extends Activity {
 					*/
 					
 					LinearLayoutView linearView = (LinearLayoutView)view;
+					
 					linearView.setStepplessVisibility((hSwipe/-horizontalSwipeGate));
+					((BadestellenAdapter) l.getAdapter()).getActualRowView().setStepplessVisibility(1-(hSwipe/-horizontalSwipeGate));
 					
 					
 					if (hSwipe<-horizontalSwipeGate ){

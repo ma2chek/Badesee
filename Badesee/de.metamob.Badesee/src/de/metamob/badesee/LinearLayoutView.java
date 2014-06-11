@@ -54,6 +54,10 @@ private void init(){
 	    textView.setTypeface(custom_font);
 	    textView.setTextSize(20);
 	    textView.setGravity(Gravity.CENTER_VERTICAL);
+	    
+	    hintDetail.setTypeface(custom_font);
+	    hintDetail.setTextSize(14);
+	    
 	    imageView = (ImageView) findViewById(R.id.icon);
 	}
 }

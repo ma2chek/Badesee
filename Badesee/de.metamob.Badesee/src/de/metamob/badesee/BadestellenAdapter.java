@@ -23,6 +23,8 @@ public class BadestellenAdapter extends ArrayAdapter<Badestelle> {
 	private Badestelle [] values;
 	private int mItemSelected = -1 ;
 	
+	private LinearLayoutView actualRowView;
+	
 	public BadestellenAdapter(Context context, int resource,
 			List<Badestelle> objects) {
 		super(context, resource, objects);
@@ -85,6 +87,11 @@ public class BadestellenAdapter extends ArrayAdapter<Badestelle> {
 	    rowView.setText(values[position].getName());
 	    rowView.setWasserqualitaet(values[position].getWasserqualitaet());
 	    rowView.setState(mItemSelected==position);
+	    this.actualRowView = (mItemSelected==position)?rowView:this.actualRowView;
 	    return rowView;
+	}
+
+	public LinearLayoutView getActualRowView() {
+		return actualRowView;
 	}	
 }
