@@ -85,7 +85,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginLeft="1dp"
-                                android:layout_marginTop="-1dp"
                                 android:text="@string/profil"
                                 android:textColor="#FFFFFF"
                                 android:textSize="13sp"
@@ -155,9 +154,10 @@
                     <TableRow
                         android:id="@+id/tableRow3"
                         android:layout_width="wrap_content"
-                        android:layout_height="48dp"
+                        android:layout_height="40dp"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
+                        android:layout_marginTop="5dp"
                         android:layout_weight="1"
                         android:baselineAligned="false" >
 
@@ -166,7 +166,6 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
-                            android:background="#f5f5f5"
                             android:gravity="center_vertical" >
 
                             <ImageView
@@ -205,7 +204,7 @@
                     <TableRow
                         android:id="@+id/tableRow5"
                         android:layout_width="wrap_content"
-                        android:layout_height="48dp"
+                        android:layout_height="40dp"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         android:layout_weight="1" >
@@ -214,8 +213,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:background="#f5f5f5" >
+                            android:layout_weight="1" >
 
                             <ImageView
                                 android:id="@+id/ImageView_ecoli"
@@ -254,7 +252,7 @@
                     <TableRow
                         android:id="@+id/tableRow6"
                         android:layout_width="wrap_content"
-                        android:layout_height="48dp"
+                        android:layout_height="40dp"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         android:layout_weight="1" >
@@ -263,8 +261,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:background="#f5f5f5" >
+                            android:layout_weight="1" >
 
                             <ImageView
                                 android:id="@+id/ImageView_wasserqualitaetLabel"
@@ -298,7 +295,7 @@
                     <TableRow
                         android:id="@+id/tableRow7"
                         android:layout_width="wrap_content"
-                        android:layout_height="48dp"
+                        android:layout_height="40dp"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         android:layout_weight="1" >
@@ -307,8 +304,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:background="#f5f5f5" >
+                            android:layout_weight="1" >
 
                             <ImageView
                                 android:id="@+id/ImageView_sichttiefe"
