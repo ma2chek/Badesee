@@ -23,24 +23,19 @@ public class Json {
 		String result = "";
 		JSONObject jsonObject = null;
 		
-		// HTTP
-		try {	    
-			
+		try {	   			
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		    StrictMode.setThreadPolicy(policy);
 		    
-			HttpClient httpclient = new DefaultHttpClient(); // for port 80 requests!
-			System.out.println("--------------------------:: " + url);
+			HttpClient httpclient = new DefaultHttpClient();
 			HttpGet httppost = new HttpGet(url);
 			HttpResponse response = httpclient.execute(httppost);
 			HttpEntity entity = response.getEntity();
 			is = entity.getContent();
 		} catch(Exception e) {
-			System.out.println("############ FEHLER0 "+e);
 			return null;
 		}
 	    
-		// Read response to string
 		try {	    	
 			BufferedReader reader = new BufferedReader(new InputStreamReader(is, HTTP.ISO_8859_1),8);
 			StringBuilder sb = new StringBuilder();
@@ -51,19 +46,15 @@ public class Json {
 			is.close();
 			result = sb.toString();	            
 		} catch(Exception e) {
-			System.out.println("############ FEHLER1");
 			return null;
 		}
  
-		// Convert string to object
 		try {
 			jsonObject = new JSONObject(result);            
 		} catch(JSONException e) {
-			System.out.println("############ FEHLER2");
 			return null;
 		}
     
-		return jsonObject;
- 
+		return jsonObject; 
 	}
 }

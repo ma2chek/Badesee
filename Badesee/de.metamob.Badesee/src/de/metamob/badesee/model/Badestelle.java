@@ -1,4 +1,4 @@
-package de.metamob.badesee;
+package de.metamob.badesee.model;
 
 import java.io.Serializable;
 
@@ -141,7 +141,6 @@ public class Badestelle implements Comparable<Badestelle>, Serializable {
 
 	@Override
 	public int compareTo(Badestelle badestelle) {
-		// TODO Auto-generated method stub
 		return this.name.compareTo(badestelle.name);
 	}
 }

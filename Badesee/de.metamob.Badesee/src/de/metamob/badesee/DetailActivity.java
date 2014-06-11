@@ -6,6 +6,7 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import de.metamob.badesee.model.Badestelle;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,8 +25,7 @@ import android.widget.TextView;
 
 public class DetailActivity extends Activity {
 	Badestelle aktuelleBadestelle;
-	Intent mainIntent; 
-	
+	Intent mainIntent; 	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,7 @@ public class DetailActivity extends Activity {
 		
 		mainIntent = new Intent(this, MainActivity.class);
 		
-		setContentView(R.layout.activity_detail);
-		
+		setContentView(R.layout.activity_detail);		
 		
 		final TableRow l = (TableRow) findViewById(R.id.tableRow1);
 		l.setClickable(true);
@@ -42,12 +41,9 @@ public class DetailActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-			//	startActivity(mainIntent);
 				finish();
 				overridePendingTransition (R.anim.open_main, R.anim.close_next);
-			}
-		   	
+			}		   	
 		});
 	}
 	
@@ -63,8 +59,7 @@ public class DetailActivity extends Activity {
 		while (aktuelleBadestelle == null){
 			super.onStart();
 			
-			GoogleMap map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
-			        .getMap();
+			GoogleMap map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 			
 			aktuelleBadestelle = (Badestelle)extras.getSerializable("badestelle");
 			map.moveCamera(CameraUpdateFactory.newLatLngZoom(aktuelleBadestelle.getCoordinates(), 12));

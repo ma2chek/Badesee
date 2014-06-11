@@ -1,5 +1,8 @@
-package de.metamob.badesee;
+package de.metamob.badesee.view;
 
+import de.metamob.badesee.R;
+import de.metamob.badesee.R.id;
+import de.metamob.badesee.listener.OnItemDragListener;
 import android.content.Context;   
 import android.graphics.Point;
 import android.util.AttributeSet;  
@@ -13,16 +16,11 @@ import android.widget.ListView;
 public class DragListView extends ListView {  
        
     private int dragPosition;
-         
-    
     private OnItemDragListener onItemDragListener;
-    private float screenWidth;
-    
+    private float screenWidth;    
     private int offsetX;
     private View row;
-    
-    private float sensitivity = 0.1f;
-    
+        
     public DragListView(Context context, AttributeSet attrs) {  
         super(context, attrs);  
         
@@ -40,43 +38,32 @@ public class DragListView extends ListView {
     @Override  
     public boolean onInterceptTouchEvent(MotionEvent ev) {  
         if(ev.getAction()==MotionEvent.ACTION_DOWN){  
-        	 
-        	
             int x = (int)ev.getX();  
-            int y = (int)ev.getY();          
-            
-            
-            
+            int y = (int)ev.getY();      
             dragPosition = pointToPosition(x, y);  
             
             ViewGroup itemView = (ViewGroup) getChildAt(dragPosition-getFirstVisiblePosition());  
-        	row = itemView.findViewById(R.id.zeile); 
-        	
-            offsetX = x;            
-            System.out.println("POSITION "+dragPosition);         
+        	row = itemView.findViewById(R.id.zeile);         	
+            offsetX = x;                   
          }  
          return super.onInterceptTouchEvent(ev);  
     }  
   
     @Override  
     public boolean onTouchEvent(MotionEvent ev) {  
-            int action = ev.getAction();  
-            if (action == MotionEvent.ACTION_MOVE){
-                float moveX = ((float)ev.getX() -offsetX) / this.screenWidth;  
-                
-                //onDrag(moveX);  
-                    
-                
-                if (this.onItemDragListener != null){
-                	System.out.println("mode "+moveX);
-                	this.onItemDragListener.onItemDrag(dragPosition, moveX, row);
-                }
-            } else if (action == MotionEvent.ACTION_UP){
-            	if (this.onItemDragListener != null){
-                	this.onItemDragListener.onItemDragEnded(dragPosition, row);
-                }
+        int action = ev.getAction();  
+        if (action == MotionEvent.ACTION_MOVE){
+            float moveX = ((float)ev.getX() -offsetX) / this.screenWidth;  
+            
+            if (this.onItemDragListener != null){
+            	System.out.println("mode "+moveX);
+            	this.onItemDragListener.onItemDrag(dragPosition, moveX, row);
             }
-             
+        } else if (action == MotionEvent.ACTION_UP){
+        	if (this.onItemDragListener != null){
+            	this.onItemDragListener.onItemDragEnded(dragPosition, row);
+            }
+        }             
         return super.onTouchEvent(ev);  
     }  
 }  

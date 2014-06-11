@@ -1,5 +1,7 @@
-package de.metamob.badesee;
+package de.metamob.badesee.view;
 
+import de.metamob.badesee.R;
+import de.metamob.badesee.R.styleable;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
