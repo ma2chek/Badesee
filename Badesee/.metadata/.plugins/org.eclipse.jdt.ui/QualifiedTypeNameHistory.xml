@@ -14,7 +14,6 @@
 <fullyQualifiedTypeName name="com.google.android.gms.maps.GoogleMap.OnMarkerClickListener"/>
 <fullyQualifiedTypeName name="de.metamob.badesee.BadestellenAdapter"/>
 <fullyQualifiedTypeName name="de.metamob.badesee.R.color"/>
-<fullyQualifiedTypeName name="de.metamob.badesee.R.layout"/>
 <fullyQualifiedTypeName name="com.google.android.gms.maps.GoogleMap"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="org.apache.http.HttpResponse"/>
@@ -34,4 +33,6 @@
 <fullyQualifiedTypeName name="android.os.Bundle"/>
 <fullyQualifiedTypeName name="de.metamob.badesee.LinearLayoutView"/>
 <fullyQualifiedTypeName name="android.graphics.Color"/>
+<fullyQualifiedTypeName name="de.metamob.badesee.R.layout"/>
+<fullyQualifiedTypeName name="de.metamob.badesee.R"/>
 </qualifiedTypeNameHistroy>

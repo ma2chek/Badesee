@@ -1,0 +1,21 @@
+package de.metamob.badesee.listener;
+
+import android.view.View;
+
+/**
+ * @author Hans
+ *
+ */
+public interface OnItemDragListener {	
+	/**
+	 * @param position
+	 * @param hSwipe
+	 * @param view
+	 */
+	public void onItemDrag(int position, float hSwipe, View view);
+	/**
+	 * @param position
+	 * @param view
+	 */
+	public void onItemDragEnded(int position, View view);
+}

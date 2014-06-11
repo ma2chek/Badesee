@@ -1,69 +1,85 @@
 package de.metamob.badesee.view;
 
-import de.metamob.badesee.R;
-import de.metamob.badesee.R.id;
-import de.metamob.badesee.listener.OnItemDragListener;
-import android.content.Context;   
+import android.content.Context;
 import android.graphics.Point;
-import android.util.AttributeSet;  
+import android.util.AttributeSet;
 import android.view.Display;
-import android.view.MotionEvent;  
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;  
-import android.widget.ListView;  
-  
-public class DragListView extends ListView {  
-       
-    private int dragPosition;
-    private OnItemDragListener onItemDragListener;
-    private float screenWidth;    
-    private int offsetX;
-    private View row;
-        
-    public DragListView(Context context, AttributeSet attrs) {  
-        super(context, attrs);  
-        
-        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        Display display = wm.getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);        
-        this.screenWidth = size.x;
-    }  
-      
-    public void setOnItemDragListener(OnItemDragListener listener){
-    	this.onItemDragListener = listener;
-    }    
-    
-    @Override  
-    public boolean onInterceptTouchEvent(MotionEvent ev) {  
-        if(ev.getAction()==MotionEvent.ACTION_DOWN){  
-            int x = (int)ev.getX();  
-            int y = (int)ev.getY();      
-            dragPosition = pointToPosition(x, y);  
-            
-            ViewGroup itemView = (ViewGroup) getChildAt(dragPosition-getFirstVisiblePosition());  
-        	row = itemView.findViewById(R.id.zeile);         	
-            offsetX = x;                   
-         }  
-         return super.onInterceptTouchEvent(ev);  
-    }  
-  
-    @Override  
-    public boolean onTouchEvent(MotionEvent ev) {  
-        int action = ev.getAction();  
-        if (action == MotionEvent.ACTION_MOVE){
-            float moveX = ((float)ev.getX() -offsetX) / this.screenWidth;  
-            
-            if (this.onItemDragListener != null){
-            	System.out.println("mode "+moveX);
-            	this.onItemDragListener.onItemDrag(dragPosition, moveX, row);
-            }
-        } else if (action == MotionEvent.ACTION_UP){
-        	if (this.onItemDragListener != null){
-            	this.onItemDragListener.onItemDragEnded(dragPosition, row);
-            }
-        }             
-        return super.onTouchEvent(ev);  
-    }  
-}  
+import android.view.WindowManager;
+import android.widget.ListView;
+import de.metamob.badesee.R;
+import de.metamob.badesee.listener.OnItemDragListener;
+
+/**
+ * @author Felix Matuschek MatNr. 798423, Hans-Christian Hanke MatNr. 798152
+ * 
+ *         Extends the ListView-Class by custom TouchEvent-Listeners. Calls the
+ *         custom EventListener "OnItemDragListener"
+ */
+public class DragListView extends ListView {
+
+	private int dragPosition;
+	private OnItemDragListener onItemDragListener;
+	private float screenWidth;
+	private int offsetX;
+	private View row;
+
+	public DragListView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+
+		WindowManager wm = (WindowManager) context
+				.getSystemService(Context.WINDOW_SERVICE);
+		Display display = wm.getDefaultDisplay();
+		Point size = new Point();
+		display.getSize(size);
+		this.screenWidth = size.x;
+	}
+
+	public void setOnItemDragListener(OnItemDragListener listener) {
+		this.onItemDragListener = listener;
+	}
+
+	/*
+	 * (non-Javadoc) Overrides the TouchEvent.
+	 * 
+	 * Identify and store the dragged ViewElement and begins the TouchPhase
+	 */
+	@Override
+	public boolean onInterceptTouchEvent(MotionEvent ev) {
+		if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+			int x = (int) ev.getX();
+			int y = (int) ev.getY();
+			dragPosition = pointToPosition(x, y);
+
+			ViewGroup itemView = (ViewGroup) getChildAt(dragPosition
+					- getFirstVisiblePosition());
+			row = itemView.findViewById(R.id.LinearLayoutView_listRow);
+			offsetX = x;
+		}
+		return super.onInterceptTouchEvent(ev);
+	}
+
+	/*
+	 * (non-Javadoc) Ovverides
+	 * 
+	 * Based on User-Action the Listener for ItemDrag or ItemDragEnded is called
+	 */
+	@Override
+	public boolean onTouchEvent(MotionEvent ev) {
+		int action = ev.getAction();
+		if (action == MotionEvent.ACTION_MOVE) {
+			float moveX = ((float) ev.getX() - offsetX) / this.screenWidth;
+
+			if (this.onItemDragListener != null) {
+				this.onItemDragListener.onItemDrag(dragPosition, moveX, row);
+			}
+		} else if (action == MotionEvent.ACTION_UP) {
+			if (this.onItemDragListener != null) {
+				this.onItemDragListener.onItemDragEnded(dragPosition, row);
+			}
+		}
+		return super.onTouchEvent(ev);
+	}
+}

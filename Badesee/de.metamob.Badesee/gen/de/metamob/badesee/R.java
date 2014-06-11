@@ -402,7 +402,7 @@ containing a value of this type.
     }
     public static final class drawable {
         public static final int arrowleft=0x7f020000;
-        public static final int arrowtight=0x7f020001;
+        public static final int arrowright=0x7f020001;
         public static final int coli=0x7f020002;
         public static final int common_signin_btn_icon_dark=0x7f020003;
         public static final int common_signin_btn_icon_disabled_dark=0x7f020004;
@@ -443,45 +443,62 @@ containing a value of this type.
         public static final int wasserquali=0x7f020027;
     }
     public static final class id {
-        public static final int DetailContainer=0x7f070016;
-        public static final int DetailLayout=0x7f070014;
-        public static final int ImageView_ecoli=0x7f070026;
-        public static final int ImageView_sichttiefe=0x7f07002e;
-        public static final int ImageView_wasserqualitaet2=0x7f07002c;
-        public static final int ImageView_wasserqualitaetLabel=0x7f07002a;
-        public static final int MapContainer=0x7f070015;
-        public static final int TextView_badestelle=0x7f07001a;
-        public static final int TextView_bezirk=0x7f07001f;
-        public static final int TextView_bezirkLabel=0x7f07001e;
-        public static final int TextView_datum=0x7f070020;
-        public static final int TextView_ecoli=0x7f070028;
-        public static final int TextView_ecoliLabel=0x7f070027;
-        public static final int TextView_enterokokken=0x7f070024;
-        public static final int TextView_enterokokkenLabel=0x7f070023;
-        public static final int TextView_profil=0x7f07001b;
-        public static final int TextView_sichttiefe=0x7f070030;
-        public static final int TextView_sichttiefeLabel=0x7f07002f;
-        public static final int TextView_wasserqualitaetLabel=0x7f07002b;
-        public static final int action_settings=0x7f070038;
-        public static final int arrow=0x7f070019;
+        public static final int DragListView_main_info=0x7f07003d;
+        public static final int FrameLayout_main=0x7f070039;
+        public static final int ImageView_detail_content_ecoli_image=0x7f07002d;
+        public static final int ImageView_detail_content_enterokokken_image=0x7f070028;
+        public static final int ImageView_detail_content_sichttiefe_image=0x7f070036;
+        public static final int ImageView_detail_content_wasserqualitaet_image=0x7f070032;
+        public static final int ImageView_detail_content_wasserqualitaet_status=0x7f070034;
+        public static final int ImageView_detail_head_wasserqualitaet=0x7f07001f;
+        public static final int ImageView_listRow_arrow=0x7f07001b;
+        public static final int ImageView_listRow_state=0x7f070040;
+        public static final int LinearLayoutView_listRow=0x7f07003e;
+        public static final int LinearLayout_detail_content=0x7f070020;
+        public static final int LinearLayout_detail_content_bezirk=0x7f070022;
+        public static final int LinearLayout_detail_head_text=0x7f07001c;
+        public static final int LinearLayout_detail_infoContainer=0x7f070016;
+        public static final int LinearLayout_detail_mapContainer=0x7f070015;
+        public static final int LinearLayout_main=0x7f07003a;
+        public static final int LinearLayout_main_info=0x7f07003c;
+        public static final int LinearLayout_main_map=0x7f07003b;
+        public static final int MapFragment_main_map=0x7f070017;
+        public static final int RelativeLayout_detail=0x7f070014;
+        public static final int RelativeLayout_detail_content_ecoli=0x7f07002c;
+        public static final int RelativeLayout_detail_content_enterokokken=0x7f070027;
+        public static final int RelativeLayout_detail_content_sichttiefe=0x7f070035;
+        public static final int RelativeLayout_detail_content_wasserqualitaet=0x7f070031;
+        public static final int RelativeLayout_detail_head=0x7f07001a;
+        public static final int RelativeLayout_listRow=0x7f07003f;
+        public static final int TableLayout_detail_infoContainer=0x7f070018;
+        public static final int TableRow_detail_content_bezirk=0x7f070021;
+        public static final int TableRow_detail_content_ecoli=0x7f07002b;
+        public static final int TableRow_detail_content_enterokokken=0x7f070026;
+        public static final int TableRow_detail_content_sichttiefe=0x7f070030;
+        public static final int TableRow_detail_head=0x7f070019;
+        public static final int TextViewCustomFont_detail_content_bezirk_datum=0x7f070025;
+        public static final int TextViewCustomFont_detail_content_bezirk_label=0x7f070023;
+        public static final int TextViewCustomFont_detail_content_bezirk_text=0x7f070024;
+        public static final int TextViewCustomFont_detail_content_ecoli_label=0x7f07002e;
+        public static final int TextViewCustomFont_detail_content_ecoli_text=0x7f07002f;
+        public static final int TextViewCustomFont_detail_content_enterokokken_label=0x7f070029;
+        public static final int TextViewCustomFont_detail_content_enterokokken_text=0x7f07002a;
+        public static final int TextViewCustomFont_detail_content_sichttiefe_label=0x7f070037;
+        public static final int TextViewCustomFont_detail_content_sichttiefe_text=0x7f070038;
+        public static final int TextViewCustomFont_detail_content_wasserqualitaet_label=0x7f070033;
+        public static final int TextViewCustomFont_detail_head_text_badestelle=0x7f07001d;
+        public static final int TextViewCustomFont_detail_head_text_profil=0x7f07001e;
+        public static final int TextView_listRow_entry=0x7f070041;
+        public static final int TextView_listRow_hintDetail=0x7f070042;
         public static final int book_now=0x7f070010;
         public static final int buyButton=0x7f07000a;
         public static final int buy_now=0x7f07000f;
         public static final int buy_with_google=0x7f07000e;
         public static final int classic=0x7f070011;
-        public static final int container=0x7f070031;
-        public static final int entry=0x7f070036;
         public static final int grayscale=0x7f070012;
         public static final int holo_dark=0x7f070005;
         public static final int holo_light=0x7f070006;
         public static final int hybrid=0x7f070004;
-        public static final int icon=0x7f070035;
-        public static final int imageView_enterokokken=0x7f070022;
-        public static final int imageView_wasserqualitaet1=0x7f07001c;
-        public static final int listView1=0x7f070033;
-        public static final int mainActivity_hintDetail=0x7f070037;
-        public static final int mainLayout=0x7f070032;
-        public static final int map=0x7f070017;
         public static final int match_parent=0x7f07000c;
         public static final int monochrome=0x7f070013;
         public static final int none=0x7f070000;
@@ -491,15 +508,8 @@ containing a value of this type.
         public static final int satellite=0x7f070002;
         public static final int selectionDetails=0x7f07000b;
         public static final int strict_sandbox=0x7f070009;
-        public static final int tableRow1=0x7f070018;
-        public static final int tableRow2=0x7f07001d;
-        public static final int tableRow3=0x7f070021;
-        public static final int tableRow5=0x7f070025;
-        public static final int tableRow6=0x7f070029;
-        public static final int tableRow7=0x7f07002d;
         public static final int terrain=0x7f070003;
         public static final int wrap_content=0x7f07000d;
-        public static final int zeile=0x7f070034;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f080000;
@@ -508,9 +518,7 @@ containing a value of this type.
         public static final int activity_detail=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int fragment_main=0x7f030002;
-        public static final int listview=0x7f030003;
-        public static final int menu_item_background_selector=0x7f030004;
-        public static final int zeilenlayout=0x7f030005;
+        public static final int layout_listrow=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
@@ -1044,16 +1052,16 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #TextViewPlus_customFont de.metamob.badesee:customFont}</code></td><td></td></tr>
+           <tr><td><code>{@link #TextViewCustomFont_customFont de.metamob.badesee:customFont}</code></td><td></td></tr>
            </table>
-           @see #TextViewPlus_customFont
+           @see #TextViewCustomFont_customFont
          */
-        public static final int[] TextViewPlus = {
+        public static final int[] TextViewCustomFont = {
             0x7f010020
         };
         /**
           <p>This symbol is the offset where the {@link de.metamob.badesee.R.attr#customFont}
-          attribute's value can be found in the {@link #TextViewPlus} array.
+          attribute's value can be found in the {@link #TextViewCustomFont} array.
 
 
           <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
@@ -1064,7 +1072,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name de.metamob.badesee:customFont
         */
-        public static final int TextViewPlus_customFont = 0;
+        public static final int TextViewCustomFont_customFont = 0;
         /**  Attributes for the WalletFragment &lt;fragment&gt; tag 
            <p>Includes the following attributes:</p>
            <table>

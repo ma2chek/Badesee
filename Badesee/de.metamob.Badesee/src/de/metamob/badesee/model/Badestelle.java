@@ -5,6 +5,11 @@ import java.io.Serializable;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 
+/**
+ * @author Felix Matuschek MatNr. 798423, Hans-Christian Hanke MatNr. 798152
+ * 
+ *         Model for Data storage
+ */
 public class Badestelle implements Comparable<Badestelle>, Serializable {
 	private String id;
 	private String name;
@@ -30,9 +35,10 @@ public class Badestelle implements Comparable<Badestelle>, Serializable {
 	 * @param wasserqualitaet
 	 * @param profilurl
 	 */
-	public Badestelle(String id, String name, String profil, String bezirk, String datum,
-			String sichttiefe, String enterokokken, String ecoli,
-			String wasserqualitaet, String profilurl, String coordinates, String badestellenlink) {
+	public Badestelle(String id, String name, String profil, String bezirk,
+			String datum, String sichttiefe, String enterokokken, String ecoli,
+			String wasserqualitaet, String profilurl, String coordinates,
+			String badestellenlink) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -42,8 +48,10 @@ public class Badestelle implements Comparable<Badestelle>, Serializable {
 		this.sichttiefe = sichttiefe;
 		this.enterokokken = enterokokken;
 		this.ecoli = ecoli;
-		this.wasserqualitaet = wasserqualitaet.substring(0,wasserqualitaet.length()-4);
-		this.wasserqualitaet = this.wasserqualitaet.equals("gruen_a") ? "gruen" : this.wasserqualitaet;		
+		this.wasserqualitaet = wasserqualitaet.substring(0,
+				wasserqualitaet.length() - 4);
+		this.wasserqualitaet = this.wasserqualitaet.equals("gruen_a") ? "gruen"
+				: this.wasserqualitaet;
 		this.profilurl = profilurl;
 		this.coordinates = coordinates;
 		this.badestellenlink = badestellenlink;
@@ -58,58 +66,70 @@ public class Badestelle implements Comparable<Badestelle>, Serializable {
 	}
 
 	public String getWasserqualitaet() {
-		System.out.println("out");
-		System.out.println(wasserqualitaet);
 		return wasserqualitaet;
 	}
 
 	public void setWasserqualitaet(String wasserqualitaet) {
-		this.wasserqualitaet = wasserqualitaet.substring(0,wasserqualitaet.length()-4);
+		this.wasserqualitaet = wasserqualitaet.substring(0,
+				wasserqualitaet.length() - 4);
 	}
-	
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getProfil() {
 		return profil;
 	}
+
 	public void setProfil(String profil) {
 		this.profil = profil;
 	}
+
 	public String getBezirk() {
 		return bezirk;
 	}
+
 	public void setBezirk(String bezirk) {
 		this.bezirk = bezirk;
 	}
+
 	public String getDatum() {
 		return datum;
 	}
+
 	public void setDatum(String datum) {
 		this.datum = datum;
 	}
+
 	public String getSichttiefe() {
 		return sichttiefe;
 	}
+
 	public void setSichttiefe(String sichttiefe) {
 		this.sichttiefe = sichttiefe;
 	}
+
 	public String getEnterokokken() {
 		return enterokokken;
 	}
+
 	public void setEnterokokken(String enterokokken) {
 		this.enterokokken = enterokokken;
 	}
+
 	public String getEcoli() {
 		return ecoli;
 	}
+
 	public void setEcoli(String ecoli) {
 		this.ecoli = ecoli;
 	}
-	
+
 	public String getId() {
 		return id;
 	}
@@ -119,8 +139,9 @@ public class Badestelle implements Comparable<Badestelle>, Serializable {
 	}
 
 	public LatLng getCoordinates() {
-		String [] coordinatesLngLat = coordinates.split(",");
-		return new LatLng(Double.parseDouble(coordinatesLngLat[1]), Double.parseDouble(coordinatesLngLat[0]));
+		String[] coordinatesLngLat = coordinates.split(",");
+		return new LatLng(Double.parseDouble(coordinatesLngLat[1]),
+				Double.parseDouble(coordinatesLngLat[0]));
 	}
 
 	public void setCoordinates(String coordinates) {
@@ -134,9 +155,16 @@ public class Badestelle implements Comparable<Badestelle>, Serializable {
 	public void setBadestellenlink(String badestellenlink) {
 		this.badestellenlink = badestellenlink;
 	}
-	
-	public float getMarker(){		
-		return (this.wasserqualitaet.equals("gruen")?BitmapDescriptorFactory.HUE_GREEN: (this.wasserqualitaet.equals("gelb")?BitmapDescriptorFactory.HUE_YELLOW: BitmapDescriptorFactory.HUE_RED));
+
+	/**
+	 * Returns a colored Marker based on the value of "wasserqualitaet"
+	 * 
+	 * @return colored Marker
+	 */
+	public float getMarker() {
+		return (this.wasserqualitaet.equals("gruen") ? BitmapDescriptorFactory.HUE_GREEN
+				: (this.wasserqualitaet.equals("gelb") ? BitmapDescriptorFactory.HUE_YELLOW
+						: BitmapDescriptorFactory.HUE_RED));
 	}
 
 	@Override
