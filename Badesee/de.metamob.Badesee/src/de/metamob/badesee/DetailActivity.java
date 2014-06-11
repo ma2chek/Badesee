@@ -53,7 +53,7 @@ public class DetailActivity extends Activity {
 	
 	@Override
 	protected void onStart(){
-		
+		super.onStart();
 		setData();
 	}
 	

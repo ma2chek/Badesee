@@ -63,9 +63,9 @@ public class MainActivity extends Activity {
 
 	final List <Badestelle> badestellen = new ArrayList<Badestelle>();
 	private GoogleMap map;
-	private int actualPosition = -1;
+	private int actualPosition = 0;
 	private boolean hSwipeDone = true;
-	private float horizontalSwipeGate = 0.5f;
+	private float horizontalSwipeGate = 0.3f;
 	
 	DragListView l;
 	
@@ -117,6 +117,8 @@ public class MainActivity extends Activity {
 		l  = (DragListView) findViewById(R.id.listView1);
 		ArrayAdapter<Badestelle> badestellenAdapter = new BadestellenAdapter(this, android.R.layout.simple_list_item_1, badestellen);
 		l.setAdapter(badestellenAdapter);
+		
+		/*
 		l.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 	        public void onItemClick(AdapterView<?> parent, View view,
@@ -142,7 +144,7 @@ public class MainActivity extends Activity {
 	          map.animateCamera(CameraUpdateFactory.newLatLngZoom(bs.getCoordinates(), 15), 2000, null); 
 	          System.out.println("select "+ bs.getName()+" // "+bs.getWasserqualitaet()) ;
 	        }
-	    });
+	    });*/
 		
 		l.setOnItemDragListener(new OnItemDragListener() {
 			
@@ -150,12 +152,18 @@ public class MainActivity extends Activity {
 			public void onItemDrag(int position, float hSwipe, View view) {
 				// TODO Auto-generated method stub
 								
-				if (hSwipe<0&& hSwipeDone){
-					Color col = new Color();
-					
+				if (hSwipe<0 && hSwipeDone && position != actualPosition){
+					/*
+					Color col = new Color();					
 					int color = 255-(int)((hSwipe/-horizontalSwipeGate)*204);
 					System.out.println("COL "+color);
 					view.setBackgroundColor(Color.rgb(color,color,color));
+					*/
+					
+					LinearLayoutView linearView = (LinearLayoutView)view;
+					linearView.setStepplessVisibility((hSwipe/-horizontalSwipeGate));
+					
+					
 					if (hSwipe<-horizontalSwipeGate ){
 						
 						if (position != actualPosition){
@@ -166,12 +174,31 @@ public class MainActivity extends Activity {
 						((BadestellenAdapter) l.getAdapter()).setItemSelected( actualPosition);	  
 				         l.invalidateViews();
 				          
-						 hSwipeDone = false;
+						 
 						 detailIntent.putExtra("badestelle", badestellen.get(actualPosition));
 					     startActivity(detailIntent);
 					     overridePendingTransition (R.anim.open_next, R.anim.close_main);
+					     hSwipeDone = false;
 					} 
 				}
+			}
+
+			@Override
+			public void onItemDragEnded(int position, View view) {
+				// TODO Auto-generated method stub
+				if (position == actualPosition && hSwipeDone){
+					System.out.println("CLICK");
+					detailIntent.putExtra("badestelle", badestellen.get(actualPosition));
+			        startActivity(detailIntent);
+			        overridePendingTransition (R.anim.open_next, R.anim.close_main);
+				} else {
+					actualPosition = position;
+					map.animateCamera(CameraUpdateFactory.newLatLngZoom( badestellen.get(actualPosition).getCoordinates(), 15), 2000, null); 					
+				}
+				
+				view.setBackgroundColor(getResources().getColor( R.color.selected_color));
+				((BadestellenAdapter) l.getAdapter()).setItemSelected( actualPosition);
+				l.invalidateViews();
 			}
 		});
 				
@@ -236,6 +263,9 @@ public class MainActivity extends Activity {
 	public void parseJSON(){		
 		try {
 			JSONObject jObject = Json.getJson("http://www.metamob.de/ema/Badewasser.json");
+			jObject = (jObject==null)?new JSONObject(readJSON("Badewasser.json")):jObject;
+			
+			
 		//	JSONObject jObject = new JSONObject(readJSON("Badewasser.json"));
 			JSONArray jsonArray = jObject.getJSONArray("index");
 			for (int i = 0; i < jsonArray.length(); i++) {			

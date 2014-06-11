@@ -21,6 +21,8 @@ public class DragListView extends ListView {
     private int offsetX;
     private View row;
     
+    private float sensitivity = 0.1f;
+    
     public DragListView(Context context, AttributeSet attrs) {  
         super(context, attrs);  
         
@@ -41,7 +43,10 @@ public class DragListView extends ListView {
         	 
         	
             int x = (int)ev.getX();  
-            int y = (int)ev.getY();                
+            int y = (int)ev.getY();          
+            
+            
+            
             dragPosition = pointToPosition(x, y);  
             
             ViewGroup itemView = (ViewGroup) getChildAt(dragPosition-getFirstVisiblePosition());  
@@ -61,11 +66,16 @@ public class DragListView extends ListView {
                 
                 //onDrag(moveX);  
                     
-                System.out.println("mode "+moveX);
+                
                 if (this.onItemDragListener != null){
+                	System.out.println("mode "+moveX);
                 	this.onItemDragListener.onItemDrag(dragPosition, moveX, row);
                 }
-            } 
+            } else if (action == MotionEvent.ACTION_UP){
+            	if (this.onItemDragListener != null){
+                	this.onItemDragListener.onItemDragEnded(dragPosition, row);
+                }
+            }
              
         return super.onTouchEvent(ev);  
     }  

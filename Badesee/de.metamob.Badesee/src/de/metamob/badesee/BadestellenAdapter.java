@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.text.format.Time;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -41,8 +42,9 @@ public class BadestellenAdapter extends ArrayAdapter<Badestelle> {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 	    LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-	    View rowView = inflater.inflate(R.layout.zeilenlayout, parent, false);
-	    ImageView arrow = (ImageView) rowView.findViewById(R.id.arrow);
+	    LinearLayoutView rowView = (LinearLayoutView) inflater.inflate(R.layout.zeilenlayout, parent, false);
+	    /*ImageView arrow = (ImageView) rowView.findViewById(R.id.arrow);
+	    TextView hintDetail = (TextView) rowView.findViewById(R.id.mainActivity_hintDetail);
 
 	    
 	    TextView textView = (TextView) rowView.findViewById(R.id.entry);
@@ -70,14 +72,19 @@ public class BadestellenAdapter extends ArrayAdapter<Badestelle> {
 	    	textView.setTextColor(context.getResources().getColor(R.color.default_color));
 	    	rowView.refreshDrawableState();
 	    	arrow.setVisibility(View.VISIBLE);
+	    	hintDetail.setVisibility(View.VISIBLE);
 	    }else{
 	    	rowView.setBackgroundColor(context.getResources().getColor(R.color.default_color));
 	    	textView.setTextColor(context.getResources().getColor(R.color.selected_color));
 	    	rowView.refreshDrawableState();
-	    	arrow.setVisibility(View.INVISIBLE);
+	    	//arrow.setVisibility(View.INVISIBLE);
+	    	//hintDetail.setVisibility(View.INVISIBLE);
 	    //	rowView.setSelected(false);
 	    //	rowView.setBackgroundColor(context.getResources().getColor(R.color.default_color));
-	    }
+	    }*/
+	    rowView.setText(values[position].getName());
+	    rowView.setWasserqualitaet(values[position].getWasserqualitaet());
+	    rowView.setState(mItemSelected==position);
 	    return rowView;
-	}
+	}	
 }
